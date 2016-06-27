@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="MSTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <!--<item name="actionSheetStyle">@style/ActionSheetStyleiOS7</item>-->
+    </style>
+
+    <style name="MSTheme.NoActionBar" parent="MSTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!--透明主题状态栏主题-->
+    <style name="MSTheme.TranslucentBar" parent="MSTheme.NoActionBar">
+    </style>
+
+    <!--日间主题-->
+    <style name="MSTheme.Light" parent="MSTheme.TranslucentBar">
+        <item name="myTheme">day</item>
+        <!--ActionBar背景  -->
+        <item name="colorPrimary">@color/color_primary_day</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark_day</item>
+        <!--三种文字颜色-->
+        <item name="textColorPrimary">@color/text_color_primary_day</item>
+        <item name="textColorFirst">@color/text_color_first_day</item>
+        <item name="textColorSecond">@color/text_color_second_day</item>
+        <item name="textColorThird">@color/text_color_third_day</item>
+        <!--页面背景-->
+        <item name="android:windowBackground">@color/background_day</item>
+        <!--<item name="toolbar_Menu_Text_Color">@color/toolbar_Menu_Text_Color_Day</item>-->
+        <!--<item name="toolbar_Text_Color">@color/toolbar_Text_Color_Day</item>-->
+        <!--&lt;!&ndash;页面背景&ndash;&gt;-->
+        <!--<item name="android:windowBackground">@color/background_Day</item>-->
+        <!--&lt;!&ndash;主页item背景色&ndash;&gt;-->
+        <!--<item name="main_item_background">@color/main_item_background_Day</item>-->
+        <!--&lt;!&ndash;Actionbar-Menu-文字&ndash;&gt;-->
+        <!--<item name="main_menu_changetheme">@string/main_menu_changetheme_day</item>-->
+    </style>
+
+    <!--夜晚主题-->
+    <style name="MSTheme.Dark" parent="MSTheme.TranslucentBar">
+        <item name="myTheme">night</item>
+        <!--ActionBar背景  -->
+        <item name="colorPrimary">@color/color_primary_night</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark_night</item>
+        <!--三种文字颜色-->
+        <item name="textColorPrimary">@color/text_color_primary_night</item>
+        <item name="textColorFirst">@color/text_color_first_night</item>
+        <item name="textColorSecond">@color/text_color_second_night</item>
+        <item name="textColorThird">@color/text_color_second_night</item>
+        <!--页面背景-->
+        <item name="android:windowBackground">@color/background_night</item>
+    </style>
+
+</resources>

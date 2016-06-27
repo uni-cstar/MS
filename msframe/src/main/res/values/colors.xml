@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 主题色-->
+    <!--白天模式-->
+    <color name="color_primary_day">#77D565</color>
+    <color name="color_primary_dark_day">#82A803</color>
+    <!--夜间模式-->
+    <color name="color_primary_night">#212121</color>
+    <color name="color_primary_dark_night">#DD000000</color>
+
+    <!-- 文字颜色-->
+    <!--白天模式-->
+    <color name="text_color_primary_day">#89CF2D</color>
+    <color name="text_color_first_day">@android:color/black</color>
+    <color name="text_color_second_day">#838383</color>
+    <color name="text_color_third_day">#838383</color>
+    <!--夜间模式-->
+    <color name="text_color_primary_night">#D0F6C1</color>
+    <color name="text_color_first_night">#DDFFFFFF</color>
+    <color name="text_color_second_night">#89FFFFFF</color>
+    <color name="text_color_third_night">#42FFFFFF</color>
+
+    <!--背景色-->
+    <color name="background_day">@android:color/white</color>
+    <color name="background_night">#FF424242</color>
+</resources>
+
