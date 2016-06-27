@@ -1,0 +1,34 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "com.ms"
+        minSdkVersion 11
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile project(':mszxing')
+//    compile project(':mstool')
+    compile project(':msview')
+    compile project(':msframe')
+//    compile(name: 'logger-1.12', ext: 'aar')
+//    compile(name: 'rxandroid-1.1.0', ext: 'aar')
+//    compile 'com.squareup.retrofit2:adapter-rxjava'
+//    compile 'com.squareup.retrofit2:converter-gson'
+}
