@@ -102,7 +102,7 @@ public abstract class MSApiClient {
 
     protected OkHttpClient.Builder createOkhttpClientBuilder() {
         //自定义拦截器，查看请求url，请求时间等
-        Interceptor logInterceptor = new LogInterceptor();
+        Interceptor logInterceptor = new MSLogInterceptor();
 
         //logging 拦截器，okhttp.logging提供，主要是用于输出网络请求和结果的Log
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();

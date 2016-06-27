@@ -2,7 +2,6 @@ package ms.frame.network;
 
 
 import rx.Observable;
-import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
@@ -107,9 +106,9 @@ public class MSApi {
      */
     public static class ApiException extends RuntimeException {
 
-        public ApiResult Result;
+        public MSApiResult Result;
 
-        public ApiException(ApiResult result) {
+        public ApiException(MSApiResult result) {
             super(result.getMsg());
             this.Result = result;
         }

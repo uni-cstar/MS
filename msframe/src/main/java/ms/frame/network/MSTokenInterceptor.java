@@ -11,6 +11,7 @@ import okhttp3.Response;
 
 /**
  * Created by SupLuo on 2016/5/17.
+ * token interceptor：put token into headers of request
  */
 public abstract class MSTokenInterceptor implements Interceptor {
 
@@ -38,12 +39,16 @@ public abstract class MSTokenInterceptor implements Interceptor {
         return chain.proceed(authorised);
     }
 
-    //token key
+    //the key of token
     public abstract String getTokenKey();
 
-    //token 值
+    //the value of token
     public abstract String getTokenValue();
 
+    /**
+     * execute before request the url
+     * @param url
+     */
     public void willRequestUrl(String url){
 
     }

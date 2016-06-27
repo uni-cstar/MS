@@ -12,9 +12,10 @@ import okhttp3.Response;
 
 /**
  * Created by SupLuo on 2016/5/17.
+ * 日志拦截器
  */
 
-public class LogInterceptor implements Interceptor {
+public class MSLogInterceptor implements Interceptor {
 
     @Override
     public Response intercept(Chain chain) throws IOException {
