@@ -1,0 +1,78 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffe1e0de"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/scanFile"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="扫描二维码文件" />
+
+        <TextView
+            android:id="@+id/resultFile"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:lines="2"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/scan"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="扫描二维码" />
+
+        <Button
+            android:id="@+id/scan2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="扫描二维码(默认自定义界面)" />
+
+        <Button
+            android:id="@+id/scan3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="扫描二维码(重载自定义界面)" />
+
+        <TextView
+            android:id="@+id/result"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:lines="2"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/create"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="生成二维码" />
+
+        <ImageView
+            android:id="@+id/qrcode_bitmap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/createMark"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="生成带商标的二维码" />
+
+        <ImageView
+            android:id="@+id/qrcode_bitmap2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</ScrollView>
