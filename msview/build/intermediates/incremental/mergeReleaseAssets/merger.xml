@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="F:\Lucio\MS\msview\src\main\assets"/><source path="F:\Lucio\MS\msview\build\generated\assets\shaders\release"/></dataSet><dataSet config="release"><source path="F:\Lucio\MS\msview\src\release\assets"/></dataSet></merger>

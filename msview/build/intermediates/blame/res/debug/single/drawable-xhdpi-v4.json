@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "F:\\Lucio\\MS\\msview\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\actionsheet_cancel_bt_bg.9.png",
+        "source": "F:\\Lucio\\MS\\msview\\src\\main\\res\\drawable-xhdpi\\actionsheet_cancel_bt_bg.9.png"
+    },
+    {
+        "merged": "F:\\Lucio\\MS\\msview\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\actionsheet_bg_ios6.9.png",
+        "source": "F:\\Lucio\\MS\\msview\\src\\main\\res\\drawable-xhdpi\\actionsheet_bg_ios6.9.png"
+    },
+    {
+        "merged": "F:\\Lucio\\MS\\msview\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\actionsheet_single_pressed.9.png",
+        "source": "F:\\Lucio\\MS\\msview\\src\\main\\res\\drawable-xhdpi\\actionsheet_single_pressed.9.png"
+    },
+    {
+        "merged": "F:\\Lucio\\MS\\msview\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\actionsheet_top_pressed.9.png",
+        "source": "F:\\Lucio\\MS\\msview\\src\\main\\res\\drawable-xhdpi\\actionsheet_top_pressed.9.png"
+    },
+    {
+        "merged": "F:\\Lucio\\MS\\msview\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\actionsheet_bottom_pressed.9.png",
+        "source": "F:\\Lucio\\MS\\msview\\src\\main\\res\\drawable-xhdpi\\actionsheet_bottom_pressed.9.png"
+    },
+    {
+        "merged": "F:\\Lucio\\MS\\msview\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\actionsheet_middle_normal.9.png",
+        "source": "F:\\Lucio\\MS\\msview\\src\\main\\res\\drawable-xhdpi\\actionsheet_middle_normal.9.png"
+    },
+    {
+        "merged": "F:\\Lucio\\MS\\msview\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\actionsheet_top_normal.9.png",
+        "source": "F:\\Lucio\\MS\\msview\\src\\main\\res\\drawable-xhdpi\\actionsheet_top_normal.9.png"
+    },
+    {
+        "merged": "F:\\Lucio\\MS\\msview\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\actionsheet_middle_pressed.9.png",
+        "source": "F:\\Lucio\\MS\\msview\\src\\main\\res\\drawable-xhdpi\\actionsheet_middle_pressed.9.png"
+    },
+    {
+        "merged": "F:\\Lucio\\MS\\msview\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\actionsheet_bottom_normal.9.png",
+        "source": "F:\\Lucio\\MS\\msview\\src\\main\\res\\drawable-xhdpi\\actionsheet_bottom_normal.9.png"
+    },
+    {
+        "merged": "F:\\Lucio\\MS\\msview\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\actionsheet_single_normal.9.png",
+        "source": "F:\\Lucio\\MS\\msview\\src\\main\\res\\drawable-xhdpi\\actionsheet_single_normal.9.png"
+    },
+    {
+        "merged": "F:\\Lucio\\MS\\msview\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\x_clear_icon.png",
+        "source": "F:\\Lucio\\MS\\msview\\src\\main\\res\\drawable-xhdpi\\x_clear_icon.png"
+    },
+    {
+        "merged": "F:\\Lucio\\MS\\msview\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\actionsheet_other_bt_bg.9.png",
+        "source": "F:\\Lucio\\MS\\msview\\src\\main\\res\\drawable-xhdpi\\actionsheet_other_bt_bg.9.png"
+    }
+]

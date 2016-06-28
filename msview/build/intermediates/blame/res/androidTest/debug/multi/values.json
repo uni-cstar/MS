@@ -1,0 +1,87 @@
+[
+    {
+        "outputFile": "F:\\Lucio\\MS\\msview\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 1194,
+                    "endColumn": 45,
+                    "endOffset": 1235
+                },
+                "from": {
+                    "file": "F:\\Lucio\\MS\\msview\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 1194,
+                        "endColumn": 45,
+                        "endOffset": 1235
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 1240,
+                    "endColumn": 42,
+                    "endOffset": 1278
+                },
+                "from": {
+                    "file": "F:\\Lucio\\MS\\msview\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 1240,
+                        "endColumn": 42,
+                        "endOffset": 1278
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 1283,
+                    "endLine": 20,
+                    "endColumn": 12,
+                    "endOffset": 2206
+                },
+                "from": {
+                    "file": "F:\\Lucio\\MS\\msview\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 1283,
+                        "endLine": 20,
+                        "endColumn": 12,
+                        "endOffset": 2206
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2211,
+                    "endLine": 34,
+                    "endColumn": 12,
+                    "endOffset": 3115
+                },
+                "from": {
+                    "file": "F:\\Lucio\\MS\\msview\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 2211,
+                        "endLine": 34,
+                        "endColumn": 12,
+                        "endOffset": 3115
+                    }
+                }
+            }
+        ]
+    }
+]

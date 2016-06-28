@@ -50,7 +50,7 @@ public class MSApi {
      *
      * @param <T>
      */
-    public static class ApiCheckResultFunc<T> implements Func1<ApiTResult<T>, Observable<T>> {
+    public static class ApiCheckResultFunc<T> implements Func1<MSApiResult<T>, Observable<T>> {
 
         TokenInvalidateListener mListener;
 
@@ -79,7 +79,7 @@ public class MSApi {
 //        }
 
         @Override
-        public Observable<T> call(ApiTResult<T> apiResult) {
+        public Observable<T> call(MSApiResult<T> apiResult) {
             if (apiResult.getRet() == 0) {//成功返回结果
                 return Observable.just(apiResult.getData());
             } else if (apiResult.getRet() == 3) {//Token失效

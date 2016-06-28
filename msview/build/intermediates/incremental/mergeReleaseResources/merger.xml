@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="22.2.1$Generated" generated="true"><source path="F:\Lucio\MS\msview\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\res"/></dataSet><dataSet config="1.0.1$Generated" generated="true"><source path="F:\Lucio\MS\msview\build\intermediates\exploded-aar\com.android.support\multidex\1.0.1\res"/></dataSet><dataSet config="main$Generated" generated="true"><source path="F:\Lucio\MS\msview\src\main\res"/><source path="F:\Lucio\MS\msview\build\generated\res\rs\release"/><source path="F:\Lucio\MS\msview\build\generated\res\resValues\release"/></dataSet><dataSet config="release$Generated" generated="true"><source path="F:\Lucio\MS\msview\src\release\res"/></dataSet><dataSet config="22.2.1" from-dependency="true" generated-set="22.2.1$Generated"><source path="F:\Lucio\MS\msview\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\res"/></dataSet><dataSet config="1.0.1" from-dependency="true" generated-set="1.0.1$Generated"><source path="F:\Lucio\MS\msview\build\intermediates\exploded-aar\com.android.support\multidex\1.0.1\res"/></dataSet><dataSet config="main" generated-set="main$Generated"><source path="F:\Lucio\MS\msview\src\main\res"><file name="slt_as_ios7_cancel_bt" path="F:\Lucio\MS\msview\src\main\res\drawable\slt_as_ios7_cancel_bt.xml" qualifiers="" type="drawable"/><file name="slt_as_ios7_other_bt_bottom" path="F:\Lucio\MS\msview\src\main\res\drawable\slt_as_ios7_other_bt_bottom.xml" qualifiers="" type="drawable"/><file name="slt_as_ios7_other_bt_middle" path="F:\Lucio\MS\msview\src\main\res\drawable\slt_as_ios7_other_bt_middle.xml" qualifiers="" type="drawable"/><file name="slt_as_ios7_other_bt_single" path="F:\Lucio\MS\msview\src\main\res\drawable\slt_as_ios7_other_bt_single.xml" qualifiers="" type="drawable"/><file name="slt_as_ios7_other_bt_top" path="F:\Lucio\MS\msview\src\main\res\drawable\slt_as_ios7_other_bt_top.xml" qualifiers="" type="drawable"/><file name="bg_bottom_white_line" path="F:\Lucio\MS\msview\src\main\res\drawable-nodpi\bg_bottom_white_line.xml" qualifiers="nodpi-v4" type="drawable"/><file name="actionsheet_bg_ios6" path="F:\Lucio\MS\msview\src\main\res\drawable-xhdpi\actionsheet_bg_ios6.9.png" qualifiers="xhdpi-v4" type="drawable"/><file name="actionsheet_bottom_normal" path="F:\Lucio\MS\msview\src\main\res\drawable-xhdpi\actionsheet_bottom_normal.9.png" qualifiers="xhdpi-v4" type="drawable"/><file name="actionsheet_bottom_pressed" path="F:\Lucio\MS\msview\src\main\res\drawable-xhdpi\actionsheet_bottom_pressed.9.png" qualifiers="xhdpi-v4" type="drawable"/><file name="actionsheet_cancel_bt_bg" path="F:\Lucio\MS\msview\src\main\res\drawable-xhdpi\actionsheet_cancel_bt_bg.9.png" qualifiers="xhdpi-v4" type="drawable"/><file name="actionsheet_middle_normal" path="F:\Lucio\MS\msview\src\main\res\drawable-xhdpi\actionsheet_middle_normal.9.png" qualifiers="xhdpi-v4" type="drawable"/><file name="actionsheet_middle_pressed" path="F:\Lucio\MS\msview\src\main\res\drawable-xhdpi\actionsheet_middle_pressed.9.png" qualifiers="xhdpi-v4" type="drawable"/><file name="actionsheet_other_bt_bg" path="F:\Lucio\MS\msview\src\main\res\drawable-xhdpi\actionsheet_other_bt_bg.9.png" qualifiers="xhdpi-v4" type="drawable"/><file name="actionsheet_single_normal" path="F:\Lucio\MS\msview\src\main\res\drawable-xhdpi\actionsheet_single_normal.9.png" qualifiers="xhdpi-v4" type="drawable"/><file name="actionsheet_single_pressed" path="F:\Lucio\MS\msview\src\main\res\drawable-xhdpi\actionsheet_single_pressed.9.png" qualifiers="xhdpi-v4" type="drawable"/><file name="actionsheet_top_normal" path="F:\Lucio\MS\msview\src\main\res\drawable-xhdpi\actionsheet_top_normal.9.png" qualifiers="xhdpi-v4" type="drawable"/><file name="actionsheet_top_pressed" path="F:\Lucio\MS\msview\src\main\res\drawable-xhdpi\actionsheet_top_pressed.9.png" qualifiers="xhdpi-v4" type="drawable"/><file name="x_clear_icon" path="F:\Lucio\MS\msview\src\main\res\drawable-xhdpi\x_clear_icon.png" qualifiers="xhdpi-v4" type="drawable"/><file path="F:\Lucio\MS\msview\src\main\res\values\as_attrs.xml" qualifiers=""><declare-styleable name="ActionSheets">
+        <attr format="reference" name="actionSheetStyle"/>
+    </declare-styleable><declare-styleable name="ActionSheet">
+        <attr format="color|reference" name="actionSheetBackground"/>
+        <attr format="color|reference" name="cancelButtonBackground"/>
+        <attr format="color|reference" name="otherButtonTopBackground"/>
+        <attr format="color|reference" name="otherButtonMiddleBackground"/>
+        <attr format="color|reference" name="otherButtonBottomBackground"/>
+        <attr format="color|reference" name="otherButtonSingleBackground"/>
+        <attr format="color|reference" name="cancelButtonTextColor"/>
+        <attr format="color|reference" name="otherButtonTextColor"/>
+        <attr format="dimension|reference" name="actionSheetPadding"/>
+        <attr format="dimension|reference" name="otherButtonSpacing"/>
+        <attr format="dimension|reference" name="cancelButtonMarginTop"/>
+        <attr format="dimension|reference" name="actionSheetTextSize"/>
+    </declare-styleable></file><file path="F:\Lucio\MS\msview\src\main\res\values\as_ids.xml" qualifiers=""><item name="as_id_bg_view" type="id"/><item name="as_cancel_btn_id" type="id"/></file><file path="F:\Lucio\MS\msview\src\main\res\values\as_theme.xml" qualifiers=""><style name="ActionSheetStyleiOS6">
+        <item name="actionSheetBackground">@drawable/actionsheet_bg_ios6</item>
+        <item name="cancelButtonBackground">@drawable/actionsheet_cancel_bt_bg</item>
+        <item name="otherButtonTopBackground">@drawable/actionsheet_other_bt_bg</item>
+        <item name="otherButtonMiddleBackground">@drawable/actionsheet_other_bt_bg</item>
+        <item name="otherButtonBottomBackground">@drawable/actionsheet_other_bt_bg</item>
+        <item name="otherButtonSingleBackground">@drawable/actionsheet_other_bt_bg</item>
+        <item name="cancelButtonTextColor">@android:color/white</item>
+        <item name="otherButtonTextColor">@android:color/black</item>
+        <item name="actionSheetPadding">20dp</item>
+        <item name="otherButtonSpacing">5dp</item>
+        <item name="cancelButtonMarginTop">20dp</item>
+        <item name="actionSheetTextSize">16sp</item>
+    </style><style name="ActionSheetStyleiOS7">
+        <item name="actionSheetBackground">@android:color/transparent</item>
+        <item name="cancelButtonBackground">@drawable/slt_as_ios7_cancel_bt</item>
+        <item name="otherButtonTopBackground">@drawable/slt_as_ios7_other_bt_top</item>
+        <item name="otherButtonMiddleBackground">@drawable/slt_as_ios7_other_bt_middle</item>
+        <item name="otherButtonBottomBackground">@drawable/slt_as_ios7_other_bt_bottom</item>
+        <item name="otherButtonSingleBackground">@drawable/slt_as_ios7_other_bt_single</item>
+        <item name="cancelButtonTextColor">#1E82FF</item>
+        <item name="otherButtonTextColor">#1E82FF</item>
+        <item name="actionSheetPadding">10dp</item>
+        <item name="otherButtonSpacing">0dp</item>
+        <item name="cancelButtonMarginTop">10dp</item>
+        <item name="actionSheetTextSize">16sp</item>
+    </style></file><file path="F:\Lucio\MS\msview\src\main\res\values\attrs.xml" qualifiers=""><declare-styleable name="CircleImageView">
+        <attr format="dimension" name="border_width"/>
+        <attr format="color" name="border_color"/>
+        <attr format="boolean" name="border_overlay"/>
+    </declare-styleable></file></source><source path="F:\Lucio\MS\msview\build\generated\res\rs\release"/><source path="F:\Lucio\MS\msview\build\generated\res\resValues\release"/></dataSet><dataSet config="release" generated-set="release$Generated"><source path="F:\Lucio\MS\msview\src\release\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="CircleImageView"><attr format="dimension" name="border_width"/><attr format="color" name="border_color"/><attr format="boolean" name="border_overlay"/></declare-styleable><declare-styleable name="ActionSheet"><attr format="color|reference" name="actionSheetBackground"/><attr format="color|reference" name="cancelButtonBackground"/><attr format="color|reference" name="otherButtonTopBackground"/><attr format="color|reference" name="otherButtonMiddleBackground"/><attr format="color|reference" name="otherButtonBottomBackground"/><attr format="color|reference" name="otherButtonSingleBackground"/><attr format="color|reference" name="cancelButtonTextColor"/><attr format="color|reference" name="otherButtonTextColor"/><attr format="dimension|reference" name="actionSheetPadding"/><attr format="dimension|reference" name="otherButtonSpacing"/><attr format="dimension|reference" name="cancelButtonMarginTop"/><attr format="dimension|reference" name="actionSheetTextSize"/></declare-styleable><declare-styleable name="ActionSheets"><attr format="reference" name="actionSheetStyle"/></declare-styleable></configuration></mergedItems></merger>

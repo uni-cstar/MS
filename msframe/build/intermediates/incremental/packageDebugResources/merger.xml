@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main$Generated" generated="true"><source path="F:\Lucio\MS\msframe\src\main\res"/><source path="F:\Lucio\MS\msframe\build\generated\res\rs\debug"/><source path="F:\Lucio\MS\msframe\build\generated\res\resValues\debug"/></dataSet><dataSet config="debug$Generated" generated="true"><source path="F:\Lucio\MS\msframe\src\debug\res"/></dataSet><dataSet config="main" generated-set="main$Generated"><source path="F:\Lucio\MS\msframe\src\main\res"><file path="F:\Lucio\MS\msframe\src\main\res\values\attrs.xml" qualifiers=""><declare-styleable name="MSCompatTheme">
+        <!--<attr name="colorPrimary" format="color" />-->
+        <!--<attr name="colorPrimaryDark" format="color" />-->
+
+        <attr format="color" name="textColorPrimary"/>
+        <attr format="color" name="textColorFirst"/>
+        <attr format="color" name="textColorSecond"/>
+        <attr format="color" name="textColorThird"/>
+
+        <attr format="integer" name="myTheme">
+            <enum name="day" value="0"/>
+            <enum name="night" value="1"/>
+        </attr>
+
+    </declare-styleable></file><file path="F:\Lucio\MS\msframe\src\main\res\values\colors.xml" qualifiers=""><color name="color_primary_dark_night">#DD000000</color><color name="text_color_first_day">@android:color/black</color><color name="text_color_third_night">#42FFFFFF</color><color name="background_night">#FF424242</color><color name="text_color_second_night">#89FFFFFF</color><color name="text_color_first_night">#DDFFFFFF</color><color name="text_color_second_day">#838383</color><color name="text_color_primary_day">#89CF2D</color><color name="color_primary_day">#77D565</color><color name="text_color_primary_night">#D0F6C1</color><color name="background_day">@android:color/white</color><color name="color_primary_dark_day">#82A803</color><color name="color_primary_night">#212121</color><color name="text_color_third_day">#838383</color></file><file path="F:\Lucio\MS\msframe\src\main\res\values\style.xml" qualifiers=""><style name="MSTheme.TranslucentBar" parent="MSTheme.NoActionBar">
+    </style><style name="MSTheme.Dark" parent="MSTheme.TranslucentBar">
+        <item name="myTheme">night</item>
+        <!--ActionBar背景  -->
+        <item name="colorPrimary">@color/color_primary_night</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark_night</item>
+        <!--三种文字颜色-->
+        <item name="textColorPrimary">@color/text_color_primary_night</item>
+        <item name="textColorFirst">@color/text_color_first_night</item>
+        <item name="textColorSecond">@color/text_color_second_night</item>
+        <item name="textColorThird">@color/text_color_second_night</item>
+        <!--页面背景-->
+        <item name="android:windowBackground">@color/background_night</item>
+    </style><style name="MSTheme.NoActionBar" parent="MSTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style><style name="MSTheme.Light" parent="MSTheme.TranslucentBar">
+        <item name="myTheme">day</item>
+        <!--ActionBar背景  -->
+        <item name="colorPrimary">@color/color_primary_day</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark_day</item>
+        <!--三种文字颜色-->
+        <item name="textColorPrimary">@color/text_color_primary_day</item>
+        <item name="textColorFirst">@color/text_color_first_day</item>
+        <item name="textColorSecond">@color/text_color_second_day</item>
+        <item name="textColorThird">@color/text_color_third_day</item>
+        <!--页面背景-->
+        <item name="android:windowBackground">@color/background_day</item>
+        <!--<item name="toolbar_Menu_Text_Color">@color/toolbar_Menu_Text_Color_Day</item>-->
+        <!--<item name="toolbar_Text_Color">@color/toolbar_Text_Color_Day</item>-->
+        <!--&lt;!&ndash;页面背景&ndash;&gt;-->
+        <!--<item name="android:windowBackground">@color/background_Day</item>-->
+        <!--&lt;!&ndash;主页item背景色&ndash;&gt;-->
+        <!--<item name="main_item_background">@color/main_item_background_Day</item>-->
+        <!--&lt;!&ndash;Actionbar-Menu-文字&ndash;&gt;-->
+        <!--<item name="main_menu_changetheme">@string/main_menu_changetheme_day</item>-->
+    </style><style name="MSTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <!--<item name="actionSheetStyle">@style/ActionSheetStyleiOS7</item>-->
+    </style></file><file path="F:\Lucio\MS\msframe\src\main\res\values-v19\style.xml" qualifiers="v19"><style name="MSTheme.TranslucentBar" parent="MSTheme.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style></file><file path="F:\Lucio\MS\msframe\src\main\res\values-v21\style.xml" qualifiers="v21"><style name="MSTheme.TranslucentBar" parent="MSTheme.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <!--Android 5.x开始需要把颜色设置透明，否则导航栏会呈现系统默认的浅灰色-->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style></file></source><source path="F:\Lucio\MS\msframe\build\generated\res\rs\debug"/><source path="F:\Lucio\MS\msframe\build\generated\res\resValues\debug"/></dataSet><dataSet config="debug" generated-set="debug$Generated"><source path="F:\Lucio\MS\msframe\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="MSCompatTheme"><attr format="color" name="textColorPrimary"/><attr format="color" name="textColorFirst"/><attr format="color" name="textColorSecond"/><attr format="color" name="textColorThird"/><attr format="integer" name="myTheme"><enum name="day" value="0"/><enum name="night" value="1"/></attr></declare-styleable></configuration></mergedItems></merger>

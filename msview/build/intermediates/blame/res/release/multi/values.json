@@ -1,0 +1,87 @@
+[
+    {
+        "outputFile": "F:\\Lucio\\MS\\msview\\build\\intermediates\\res\\merged\\release\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 1194,
+                    "endColumn": 45,
+                    "endOffset": 1235
+                },
+                "from": {
+                    "file": "F:\\Lucio\\MS\\msview\\src\\main\\res\\values\\as_ids.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 2,
+                        "startOffset": 66,
+                        "endColumn": 43,
+                        "endOffset": 107
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 1240,
+                    "endColumn": 42,
+                    "endOffset": 1278
+                },
+                "from": {
+                    "file": "F:\\Lucio\\MS\\msview\\src\\main\\res\\values\\as_ids.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 2,
+                        "startOffset": 111,
+                        "endColumn": 40,
+                        "endOffset": 149
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 1283,
+                    "endLine": 20,
+                    "endColumn": 12,
+                    "endOffset": 2206
+                },
+                "from": {
+                    "file": "F:\\Lucio\\MS\\msview\\src\\main\\res\\values\\as_theme.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 56,
+                        "endLine": 16,
+                        "endColumn": 12,
+                        "endOffset": 979
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2211,
+                    "endLine": 34,
+                    "endColumn": 12,
+                    "endOffset": 3115
+                },
+                "from": {
+                    "file": "F:\\Lucio\\MS\\msview\\src\\main\\res\\values\\as_theme.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 985,
+                        "endLine": 31,
+                        "endColumn": 12,
+                        "endOffset": 1889
+                    }
+                }
+            }
+        ]
+    }
+]

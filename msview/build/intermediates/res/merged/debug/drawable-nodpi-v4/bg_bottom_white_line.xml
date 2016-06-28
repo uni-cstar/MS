@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 连框颜色值 -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#77D565" />
+        </shape>
+    </item>
+    <!-- 主体背景颜色值 -->
+    <item
+        android:bottom="2px"
+        android:left="-2px"
+        android:right="-2px"
+        android:top="-2px"
+    >
+        <shape android:shape="rectangle">
+            <stroke
+                android:width="1px"
+                android:color="@android:color/white" />
+            <!--<solid android:color="@android:color/transparent" />-->
+        </shape>
+    </item>
+
+</layer-list>
