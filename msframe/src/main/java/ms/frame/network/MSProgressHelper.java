@@ -14,6 +14,7 @@ import okhttp3.Response;
 public class MSProgressHelper {
     /**
      * 包装OkHttpClient，用于下载文件的回调
+     * TODO 待测
      *
      * @param client           待包装的OkHttpClient
      * @param progressListener 进度回调接口
@@ -48,6 +49,7 @@ public class MSProgressHelper {
                 Response response = originalResponse.newBuilder()
                         .body(new MSProgressResponseBody(originalResponse.body(), progressListener))
                         .build();
+                //移除拦截器
                 client.networkInterceptors().remove(this);
                 //返回响应体
                 return response;
@@ -57,7 +59,7 @@ public class MSProgressHelper {
 
     /**
      * 包装请求体用于上传文件的回调
-     *
+     * TODO 待测
      * @param requestBody             请求体RequestBody
      * @param progressRequestListener 进度回调接口
      * @return 包装后的进度回调请求体
