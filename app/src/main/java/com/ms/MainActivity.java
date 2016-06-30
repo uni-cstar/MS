@@ -9,10 +9,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.ms.test.mszxing.MSZXingMainActivity;
+import com.ms.test.mszxing.ScreenShotForQrCodeActivity;
 
 public class MainActivity extends Activity implements AdapterView.OnItemClickListener {
 
     ArrayAdapter mAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,15 +29,19 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
 
     public String[] getDataArray() {
         return new String[]{
-                "二维码"
+                "二维码",
+                "截屏扫描二维码"
         };
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         String menu = (String) mAdapter.getItem(position);
-        if("二维码".equals(menu)){
+        if ("二维码".equals(menu)) {
             Intent it = new Intent(this, MSZXingMainActivity.class);
+            startActivity(it);
+        }else if("截屏扫描二维码".equals(menu)){
+            Intent it = new Intent(this, ScreenShotForQrCodeActivity.class);
             startActivity(it);
         }
     }

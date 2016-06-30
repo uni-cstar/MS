@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MS</string>
+    <string name="title_activity_screen_shot_for_qr_code">ScreenShotForQrCodeActivity</string>
 </resources>

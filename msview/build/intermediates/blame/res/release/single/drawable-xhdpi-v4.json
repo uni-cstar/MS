@@ -32,12 +32,12 @@
         "source": "F:\\Lucio\\MS\\msview\\src\\main\\res\\drawable-xhdpi\\actionsheet_top_normal.9.png"
     },
     {
-        "merged": "F:\\Lucio\\MS\\msview\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\actionsheet_single_normal.9.png",
-        "source": "F:\\Lucio\\MS\\msview\\src\\main\\res\\drawable-xhdpi\\actionsheet_single_normal.9.png"
-    },
-    {
         "merged": "F:\\Lucio\\MS\\msview\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\actionsheet_bg_ios6.9.png",
         "source": "F:\\Lucio\\MS\\msview\\src\\main\\res\\drawable-xhdpi\\actionsheet_bg_ios6.9.png"
+    },
+    {
+        "merged": "F:\\Lucio\\MS\\msview\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\actionsheet_single_normal.9.png",
+        "source": "F:\\Lucio\\MS\\msview\\src\\main\\res\\drawable-xhdpi\\actionsheet_single_normal.9.png"
     },
     {
         "merged": "F:\\Lucio\\MS\\msview\\build\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\actionsheet_cancel_bt_bg.9.png",

@@ -2,12 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ms" >
 
-
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
 
@@ -24,14 +25,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".test.mszxing.MSZXingMainActivity" />
         <activity android:name=".test.mszxing.MSZXingCustomerActivity" />
-        <activity android:name="com.ms.zxing.ZXingScannerActivity" />
-        <activity android:name="com.ms.zxing.ZXingCustomerScannerActivity" />
-
-
-
+        <activity android:name=".zxing.ZXingScannerActivity" />
+        <activity android:name=".zxing.ZXingCustomerScannerActivity" />
+        <activity
+            android:name=".test.mszxing.ScreenShotForQrCodeActivity"
+            android:label="@string/title_activity_screen_shot_for_qr_code"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>
