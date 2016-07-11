@@ -286,10 +286,10 @@ public class ZXingManager {
      * 截屏检查二维码
      * 最好放在子线程执行
      * @param activity
-     * @param downY
+     * @param downY 手指长按的Y坐标
      * @return 如果结果返回空字符串，则不存在二维码或二维码解析失败
      */
-    public String screenshotForChekQrcode(Activity activity, float downY) {
+    public String screenshotForCheckQrcode(Activity activity, float downY) {
         activity.getWindow().getDecorView().setDrawingCacheEnabled(true);
         Bitmap bmp = activity.getWindow().getDecorView().getDrawingCache();
         if (bmp == null) {
