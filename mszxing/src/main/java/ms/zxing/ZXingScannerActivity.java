@@ -137,7 +137,7 @@ public class ZXingScannerActivity extends Activity implements Callback ,IZXingSc
 
 	}
 
-	@Override 
+	@Override
 	public void surfaceCreated(SurfaceHolder holder) {
 		if (!hasSurface) {
 			hasSurface = true;

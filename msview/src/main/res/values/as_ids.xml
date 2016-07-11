@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-   
-    
-  <item type="id" name="as_cancel_btn_id"/>
-  <item type="id" name="as_id_bg_view"/>
+
+    <item name="as_cancel_btn_id" type="id" />
+    <item name="as_id_bg_view" type="id" />
+
 </resources>
