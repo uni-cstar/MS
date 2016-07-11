@@ -1,1 +1,1 @@
-include ':app', ':mstool', ':msframe', ':msview', ':mszxing'
+include ':app', ':mstool', ':msframe', ':msview', ':mszxing', ':msdesign'
