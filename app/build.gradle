@@ -26,10 +26,12 @@ dependencies {
 //    compile project(':mstool')
     compile project(':msview')
     compile project(':msframe')
+//    compile 'com.ms:msframe:1.0.0'
 //    compile(name: 'logger-1.12', ext: 'aar')
 //    compile(name: 'rxandroid-1.1.0', ext: 'aar')
 //    compile 'com.squareup.retrofit2:adapter-rxjava'
 //    compile 'com.squareup.retrofit2:converter-gson'
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'com.android.support:design:22.2.1'
+//    compile 'com.ms:mstool:1.0.4'
 }

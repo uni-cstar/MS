@@ -85,10 +85,10 @@ public class MSBaseActivity extends AppCompatActivity implements MSTheme {
     }
 
 
-
     /**
      * 解决透明状态栏效果
      * 设置支持android:fitsSystemWindows="true"
+     *
      * @param rootGroup
      */
     @Override
@@ -106,10 +106,10 @@ public class MSBaseActivity extends AppCompatActivity implements MSTheme {
         }
 
         //如果是4.4 至6.0之间，需要把主界面背景设置为跟标题栏背景颜色一致
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT <=  Build.VERSION_CODES.LOLLIPOP_MR1) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP_MR1) {
             Resources.Theme theme = this.getTheme();
             if (theme != null) {
-                TypedArray a = theme.obtainStyledAttributes(R.styleable.Theme);
+                TypedArray a = theme.obtainStyledAttributes(new int[R.styleable.Theme_colorPrimary]);
                 int colorPrimary = a.getColor(R.styleable.Theme_colorPrimary, 0);
                 a.recycle();
                 //将整个窗口背景设置为主题色，解决4.4透明状态栏颜色问题

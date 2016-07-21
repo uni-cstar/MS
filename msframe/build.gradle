@@ -1,15 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'maven'
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: "file://localhost/F:/Lucio/extras/android/m2repository/")
-            pom.version = '0.5'
-            pom.groupId = 'ms.frame'
-            pom.artifactId = 'msframe'
-        }
-    }
-}
 
 android {
     compileSdkVersion 22

@@ -1,10 +1,10 @@
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-def proj_version = '1.0.2'
-def proj_artifact_id = 'msframe'
-def proj_pom_name = 'Lite Frame for Android'
-def proj_website_url = 'https://github.com/SupLuo/MS/tree/master/MSFrame'
+def proj_version = '0.0.1'
+def proj_artifact_id = 'msdesign'
+def proj_pom_name = 'Design for Android'
+def proj_website_url = 'https://github.com/SupLuo/MS/tree/master/msdesign'
 
 group = PROJ_GROUP
 version = proj_version

@@ -30,7 +30,7 @@ public class MSCountDownTimerManager implements MSCountDownFinishListener {
 
     /**
      * 开始倒计时
-     * 如果对应key的计时器已经存在并正在运行，则不会重新创建倒计时
+     * 如果对应key的计时器已经存在并正在运行，则复用之前的倒计时对象
      * @param total 倒计时时间
      * @param inteval 执行间隔时间
      * @param key 用于唯一指定定时器的key
@@ -63,13 +63,15 @@ public class MSCountDownTimerManager implements MSCountDownFinishListener {
     }
     
     /**
-     * 
+     * update by 2016.07.21
      * @param total
      * @param inteval
      * @param key
      * @param listener
      * @param restartIfExitsAndFinished 如果有相同的定时器，并且定时器已经结束，是否自动重启一个定时器
-     * @return restartifExitsAndFinished == false,则返回null
+     * @return restartifExitsAndFinished == false,
+     *          包含相同key的定时器，如果定时器未结束，则返回定时器对象并绑定回调，如果已结束则返回null
+     *          不包含同key的定时器，则返回null
      */
     public MSCountDownTimer start(long total, long inteval, String key, MSCountDownTimerListener listener,boolean restartIfExitsAndFinished) {
     	MSCountDownTimer timer = null;
@@ -90,12 +92,14 @@ public class MSCountDownTimerManager implements MSCountDownFinishListener {
             }
             timer.setOnCountDownTimerListener(listener);
         } else {
-            timer = new MSCountDownTimer(total, inteval, key, this);
-            timer.setOnCountDownTimerListener(listener);
-            listener.onMSCDTimerCreate();
+            if(restartIfExitsAndFinished){
+                timer = new MSCountDownTimer(total, inteval, key, this);
+                timer.setOnCountDownTimerListener(listener);
+                listener.onMSCDTimerCreate();
 
-            myCdTimerHashMap.put(key, timer);
-            timer.start();
+                myCdTimerHashMap.put(key, timer);
+                timer.start();
+            }
         }
         return timer;
     }
