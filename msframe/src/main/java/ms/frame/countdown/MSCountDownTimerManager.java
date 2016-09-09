@@ -68,17 +68,21 @@ public class MSCountDownTimerManager implements MSCountDownFinishListener {
      * @param inteval
      * @param key
      * @param listener
-     * @param restartIfExitsAndFinished 如果有相同的定时器，并且定时器已经结束，是否自动重启一个定时器
-     * @return restartifExitsAndFinished == false,
-     *          包含相同key的定时器，如果定时器未结束，则返回定时器对象并绑定回调，如果已结束则返回null
-     *          不包含同key的定时器，则返回null
+     * @param restartIfExitsAndFinished 如果有相同的定时器，并且定时器已经结束，是否重启定时器
+     * @param startIfNotExits 当不存在相同key的定时器时，是否启动一个定时器
+     * @return ,
+     *          包含相同key的定时器：
+     *              restartifExitsAndFinished == false，如果定时器未结束，则返回定时器对象并绑定回调，如果已结束则返回null
+     *              restartifExitsAndFinished == true,如果定时器未结束，则返回定时器对象，并绑定毁掉，如果已结束，重新启动一个新的定时器
+     *          不包含同key的定时器，
+     *              startIfNotExits == false ,返回null
+     *              startIfNotExits == true,创建一个新定时器，并返回
      */
-    public MSCountDownTimer start(long total, long inteval, String key, MSCountDownTimerListener listener,boolean restartIfExitsAndFinished) {
+    public MSCountDownTimer start(long total, long inteval, String key, MSCountDownTimerListener listener,boolean restartIfExitsAndFinished,boolean startIfNotExits) {
     	MSCountDownTimer timer = null;
         if (myCdTimerHashMap.containsKey(key)) {//如果已包含倒计时
             timer = myCdTimerHashMap.get(key);
             if (timer.isFinish()) {//倒计时已结束
-            	
             	if(!restartIfExitsAndFinished)//如果不重启，则
             		return null;
             	
@@ -92,7 +96,7 @@ public class MSCountDownTimerManager implements MSCountDownFinishListener {
             }
             timer.setOnCountDownTimerListener(listener);
         } else {
-            if(restartIfExitsAndFinished){
+            if(startIfNotExits){
                 timer = new MSCountDownTimer(total, inteval, key, this);
                 timer.setOnCountDownTimerListener(listener);
                 listener.onMSCDTimerCreate();
