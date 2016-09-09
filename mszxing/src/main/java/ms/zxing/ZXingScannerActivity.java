@@ -34,9 +34,9 @@ import ms.zxing.core.ViewfinderResultPointCallback;
 import ms.zxing.core.ViewfinderView;
 
 /**
- * Initial the camera
+ * 二维码扫描界面
  * 
- * @author Ryan.Tang
+ * @author SupLuo
  */
 
 public class ZXingScannerActivity extends Activity implements Callback ,IZXingScanner{

@@ -1,8 +1,5 @@
 package ms.zxing;
 
-import java.util.HashMap;
-import java.util.Hashtable;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -11,7 +8,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
-import android.os.Build;
 import android.text.TextUtils;
 
 import com.google.zxing.BarcodeFormat;
@@ -29,8 +25,13 @@ import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.QRCodeReader;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 
+import java.util.Hashtable;
+
 import ms.zxing.core.RGBLuminanceSource;
 
+/**
+ * 二维码相关操作管理类
+ */
 public class ZXingManager {
 
     /**
@@ -289,7 +290,7 @@ public class ZXingManager {
      * @param downY 手指长按的Y坐标
      * @return 如果结果返回空字符串，则不存在二维码或二维码解析失败
      */
-    public String screenshotForCheckQrcode(Activity activity, float downY) {
+    public static String screenshotForCheckQrcode(Activity activity, float downY) {
         activity.getWindow().getDecorView().setDrawingCacheEnabled(true);
         Bitmap bmp = activity.getWindow().getDecorView().getDrawingCache();
         if (bmp == null) {
