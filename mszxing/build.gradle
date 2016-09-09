@@ -35,4 +35,4 @@ dependencies {
     compile files('libs/zxing_core.jar')
 }
 
-//apply from:'./bintray.gradle'
+apply from:'./bintray.gradle'
