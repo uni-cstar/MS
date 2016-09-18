@@ -20,6 +20,8 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        int i = 0;
+
         ListView lstV = (ListView) this.findViewById(R.id.lstV);
         lstV.setOnItemClickListener(this);
 
@@ -40,7 +42,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         if ("二维码".equals(menu)) {
             Intent it = new Intent(this, MSZXingMainActivity.class);
             startActivity(it);
-        }else if("截屏扫描二维码".equals(menu)){
+        } else if ("截屏扫描二维码".equals(menu)) {
             Intent it = new Intent(this, ScreenShotForQrCodeActivity.class);
             startActivity(it);
         }
