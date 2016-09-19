@@ -30,7 +30,7 @@ public class MSBaseActivity extends AppCompatActivity implements MSTheme {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //主题切换
-        if(isEnableThemeSwitch())
+        if (isEnableThemeSwitch())
             setTheme(MSPBCache.getThemeRes(this));
     }
 
@@ -53,9 +53,13 @@ public class MSBaseActivity extends AppCompatActivity implements MSTheme {
     }
 
     private void fitSystemWindows() {
-        if (!isFitsSystemWindows()) return;
-        ViewGroup contentFrameLayout = (ViewGroup) findViewById(Window.ID_ANDROID_CONTENT);
-        setFitsSystemWindows(contentFrameLayout);
+        try {
+            if (!isFitsSystemWindows()) return;
+            ViewGroup contentFrameLayout = (ViewGroup) findViewById(Window.ID_ANDROID_CONTENT);
+            setFitsSystemWindows(contentFrameLayout);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -76,6 +80,7 @@ public class MSBaseActivity extends AppCompatActivity implements MSTheme {
 
     /**
      * 默认支持主题切换
+     *
      * @return
      */
     @Override
@@ -113,17 +118,21 @@ public class MSBaseActivity extends AppCompatActivity implements MSTheme {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP_MR1) {
             Resources.Theme theme = this.getTheme();
             if (theme != null) {
-                TypedArray a = theme.obtainStyledAttributes(new int[R.styleable.Theme_colorPrimary]);
-                int colorPrimary = a.getColor(R.styleable.Theme_colorPrimary, 0);
-                a.recycle();
-                //将整个窗口背景设置为主题色，解决4.4透明状态栏颜色问题
-                if (colorPrimary != 0) {
-                    //借助工具，解决4.4透明状态栏颜色问题
-                    SystemBarTintManager tintManager = new SystemBarTintManager(this);
-                    tintManager.setStatusBarTintColor(colorPrimary);
-                    tintManager.setStatusBarTintEnabled(true);
+
+                TypedArray a = theme.obtainStyledAttributes(new int[]{R.attr.colorPrimary});
+                if (a != null) {
+                    int colorPrimary = a.getColor(0, 0);
+                    a.recycle();
+                    //将整个窗口背景设置为主题色，解决4.4透明状态栏颜色问题
+                    if (colorPrimary != 0) {
+                        //借助工具，解决4.4透明状态栏颜色问题
+                        SystemBarTintManager tintManager = new SystemBarTintManager(this);
+                        tintManager.setStatusBarTintColor(colorPrimary);
+                        tintManager.setStatusBarTintEnabled(true);
 //                    parentView.setBackgroundColor(colorPrimary);
+                    }
                 }
+
             }
         }
         //5.0不需要额外设置
@@ -150,7 +159,6 @@ public class MSBaseActivity extends AppCompatActivity implements MSTheme {
     public void onThemeSwitch() {
 
     }
-
 
 
     protected void startActivity(Class cls) {
