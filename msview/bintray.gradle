@@ -1,7 +1,7 @@
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-def proj_version = '1.0.1'
+def proj_version = '0.1.0'
 def proj_artifact_id = 'msview'
 def proj_pom_name = 'Custom View for Android'
 def proj_website_url = 'https://github.com/SupLuo/MS/tree/master/MSView'

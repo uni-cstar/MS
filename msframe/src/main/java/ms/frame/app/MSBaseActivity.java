@@ -110,7 +110,7 @@ public class MSBaseActivity extends AppCompatActivity implements MSTheme {
         }
 
         //如果是4.4 至6.0之间，需要把主界面背景设置为跟标题栏背景颜色一致
-        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP_MR1) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP_MR1) {
             Resources.Theme theme = this.getTheme();
             if (theme != null) {
                 TypedArray a = theme.obtainStyledAttributes(new int[R.styleable.Theme_colorPrimary]);
