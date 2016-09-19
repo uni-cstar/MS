@@ -8,4 +8,115 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+
+
+    <!--标准* 组件与组件之间的间隙-->
+    <dimen name="view_margin">8dp</dimen>
+    <!--两个touch值给出了建议的可触控区域大小规则-->
+    <!--标准* 建议的触控区域大小-->
+    <dimen name="size_touch">48dp</dimen>
+    <!--可触控高度区域大小-->
+    <dimen name="size_touch_height">48dp</dimen>
+    <!--标准* 按钮高度，要满足size_touch_height 规则，如果一个按钮36dp，那么上下应该各有6dp间隙-->
+    <dimen name="button_height">36dp</dimen>
+
+    <!---->
+    <dimen name="content_margin_4">4dp</dimen>
+
+    <!--
+        如果界面内的元素宽度是整个屏幕宽度，那么具体的文本内容左右边距应该保留16个dp
+        Screen edge left and right margins: 16dp
+    -->
+    <!--平板开发为24-->
+    <dimen name="content_horizontal_margin">16dp</dimen>
+
+    <!--
+         如果界面内的元素宽度是整个屏幕宽度，并且包含图片，那么具体的文本内容距离屏幕左边距应该为72dp
+        Content left margin from screen edge: 72dp
+        计算原理：
+            内容平铺，与界面左边距保留16dp，即content_horizontal_margin
+            图标的大小建议为48dp
+            控件与控件之间的间隙建议为8dp
+            即16+48+8 = 72
+        -->
+    <!--平板开发为80dp-->
+    <dimen name="content_left_margin">72dp</dimen>
+
+    <!--
+        内容与右边界保留32dp间隙
+        Right-side icons align 32dp from the right edge to coordinate with the floating action button.-->
+    <dimen name="content_right_margin">32dp</dimen>
+
+    <!--状态栏高度-->
+    <dimen name="height_status_bar">24dp</dimen>
+    <!--顶部菜单栏，平板应为64dp-->
+    <dimen name="height_tool_bar">56dp</dimen>
+    <!--标题高度，平板应为80dp-->
+    <dimen name="height_title">72dp</dimen>
+    <!--二级标题高度（整个控件）-->
+    <dimen name="height_subtitle">48dp</dimen>
+    <!--列表元素：通常包含头像或者包含两行文本的item，单行似乎也可以用48
+        平板单行高度：48dp（单行）
+        -->
+    <dimen name="height_list_item">72dp</dimen>
+    <!--列表元素之间如果要出现分割块，则高度应为8dp，其实遵循另外一个规则，组件与组件之间应保留8dp间隔-->
+    <dimen name="height_list_item_space">8dp</dimen>
+
+    <!--列表菜单元素，比如侧滑菜单高度-->
+    <dimen name="height_menu_item">48dp</dimen>
+
+    <!--当图标不足48dp时，图片大小规格可选择24dp或36dp其他位置留白，保障48可触控区域-->
+    <dimen name="size_icon_small">24dp</dimen><!--如菜单栏顶部右上角图标大小-->
+    <dimen name="size_icon_large">36dp</dimen>
+    <!--系统图标大小-->
+    <dimen name="size_icon_sys">48dp</dimen>
+    <!--
+        Product icon:48dp with 1dp edges
+        产品图标大小为48dp，并且图标内部有1dp距离的边框
+    -->
+    <dimen name="size_icon_product">48dp</dimen>
+
+    <!--头像大小，也要保证touchsize = 48的规则，即头像大小为40dp，四周留白水平和垂直方向分别总共8dp-->
+    <dimen name="size_avatar">40dp</dimen>
+
+    <!--建议规则，不能直接使用值-->
+    <!--image dimesion，这个就类似于宽灯片item的宽高比例吧，建议为3:2-->
+    <!--<dimen name="image_dimesion">3:2</dimen>-->
+
+    <!--注重规则：
+        侧边栏导航菜单的宽度应为屏幕宽度 - 56dp
+        即只需要保证侧边栏导航菜单显示的时候，与屏幕的另一边框之间保留56dp距离-->
+    <dimen name="size_nav_right_margin">56dp</dimen>
+
+
+    <!--以下标准值为 dimens-en文件中的值-->
+
+    <!--
+    没有添加后缀的：regular
+    medium : 中等的
+    text前缀：文本大小
+    leading:首行文本与标题之间的间距：这个值=首行文本一行的高度 + 空白间距
+            例如：上面medium这行为标题，text这行为正文，则leading = text单行文本的高度 + 与标题之间的空白高度
+
+    -->
+    <dimen name="button_text_medium">14sp</dimen><!--中等按钮-->
+
+    <dimen name="text_caption">12sp</dimen><!--regular字幕-->
+    <dimen name="text_body">14sp</dimen><!--regular文本-->
+    <dimen name="text_body_medium">14sp</dimen><!--中等文本-->
+    <dimen name="leading_body1">20dp</dimen>
+    <dimen name="leading_body2">24dp</dimen>
+    <dimen name="text_subheading">16sp</dimen><!--子标题-->
+    <dimen name="leading_subheading1">28dp</dimen>
+    <dimen name="leading_subheading2">24dp</dimen>
+    <dimen name="text_title">20sp</dimen><!--标题-->
+    <dimen name="text_title_medium">20sp</dimen><!--标题-->
+    <dimen name="text_headline">24sp</dimen><!--大字标题-->
+    <dimen name="leading_headline">32dp</dimen>
+    <dimen name="text_display1">34sp</dimen><!--展示的大文本1-->
+    <dimen name="leading_display1">40dp</dimen><!--与display1配对，即display1与第一行之间的间距-->
+    <dimen name="text_display2">45sp</dimen>
+    <dimen name="leading_display2">48dp</dimen><!--与display2配对，即display2与第一行之间的间距-->
+    <dimen name="text_display3">56sp</dimen>
+    <dimen name="text_display4">112sp</dimen>
 </resources>

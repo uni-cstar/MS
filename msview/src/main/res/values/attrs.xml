@@ -7,4 +7,25 @@
         <attr name="border_overlay" format="boolean" />
     </declare-styleable>
 
+    <!-- start 自定义圆角/圆形 ImageView的属性 -->
+    <declare-styleable name="RoundImageView">
+
+        <!--边框半径
+        <attr name="borderWidth" format="dimension" />
+        -->
+
+        <!-- 圆角半径 -->
+        <attr name="borderRadius" />
+        <!-- 图片形状 见下面type属性的定义 -->
+        <attr name="type" />
+    </declare-styleable>
+
+    <attr name="borderRadius" format="dimension" />
+
+    <attr name="type">
+        <enum name="circle" value="0" />
+        <enum name="round" value="1" />
+    </attr>
+    <!-- end 自定义圆角/圆形 ImageView的属性 -->
+
 </resources>

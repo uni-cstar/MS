@@ -1,5 +1,6 @@
 package ms.frame.app;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -23,6 +24,11 @@ public class MSBaseFragment extends Fragment implements MSTheme {
     }
 
     @Override
+    public boolean isEnableThemeSwitch() {
+        return true;
+    }
+
+    @Override
     public boolean isFitsSystemWindows() {
         return true;
     }
@@ -38,14 +44,14 @@ public class MSBaseFragment extends Fragment implements MSTheme {
 
     @Override
     public void setLightTheme() {
-        if (this.getActivity() == null)
+        if (this.getActivity() == null || !isEnableThemeSwitch())
             return;
         this.getActivity().setTheme(R.style.MSTheme_Light);
     }
 
     @Override
     public void setDarkTheme() {
-        if (this.getActivity() == null)
+        if (this.getActivity() == null || !isEnableThemeSwitch())
             return;
         this.getActivity().setTheme(R.style.MSTheme_Dark);
     }
@@ -58,5 +64,28 @@ public class MSBaseFragment extends Fragment implements MSTheme {
     @Override
     public void onThemeSwitch() {
 
+    }
+
+
+    protected void startActivity(Class cls) {
+        Intent it = new Intent(this.getActivity(), cls);
+        startActivity(it);
+    }
+
+    protected void startActivity(Class cls, int requestCode) {
+        Intent it = new Intent(this.getActivity(), cls);
+        startActivityForResult(it, requestCode);
+    }
+
+    protected void startActivity(Class cls, Bundle bundle) {
+        Intent it = new Intent(this.getActivity(), cls);
+        it.putExtras(bundle);
+        startActivity(it);
+    }
+
+    protected void startActivity(Class cls, Bundle bundle, int requestCode) {
+        Intent it = new Intent(this.getActivity(), cls);
+        it.putExtras(bundle);
+        startActivityForResult(it, requestCode);
     }
 }

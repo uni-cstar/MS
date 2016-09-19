@@ -8,13 +8,22 @@ import android.view.View;
 interface MSTheme {
 
     /**
+     * 是否支持主题切换
+     *
+     * @return
+     */
+    boolean isEnableThemeSwitch();
+
+    /**
      * 是否设置android:fitsSystemWindows="true"
+     *
      * @return
      */
     boolean isFitsSystemWindows();
 
     /**
      * 修正上层状态栏
+     *
      * @param rootGroup
      */
     void setFitsSystemWindows(View rootGroup);
@@ -31,6 +40,7 @@ interface MSTheme {
 
     /**
      * 是否是夜间模式
+     *
      * @return
      */
     boolean isLightTheme();

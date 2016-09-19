@@ -15,7 +15,7 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        minSdkVersion 11
+        minSdkVersion 10
         targetSdkVersion 22
         // Enabling multidex support.
         multiDexEnabled true

@@ -1,6 +1,7 @@
 package ms.frame.app;
 
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Build;
@@ -29,8 +30,8 @@ public class MSBaseActivity extends AppCompatActivity implements MSTheme {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //主题切换
-        setTheme(MSPBCache.getThemeRes(this));
-        //TODO add activity
+        if(isEnableThemeSwitch())
+            setTheme(MSPBCache.getThemeRes(this));
     }
 
     @Override
@@ -69,14 +70,17 @@ public class MSBaseActivity extends AppCompatActivity implements MSTheme {
         isFocus = false;
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        //TODO remove activity
-    }
-
     public boolean isFocus() {
         return isFocus;
+    }
+
+    /**
+     * 默认支持主题切换
+     * @return
+     */
+    @Override
+    public boolean isEnableThemeSwitch() {
+        return true;
     }
 
     @Override
@@ -106,7 +110,7 @@ public class MSBaseActivity extends AppCompatActivity implements MSTheme {
         }
 
         //如果是4.4 至6.0之间，需要把主界面背景设置为跟标题栏背景颜色一致
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP_MR1) {
+        if (Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT ){//&& Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP_MR1) {
             Resources.Theme theme = this.getTheme();
             if (theme != null) {
                 TypedArray a = theme.obtainStyledAttributes(new int[R.styleable.Theme_colorPrimary]);
@@ -145,6 +149,30 @@ public class MSBaseActivity extends AppCompatActivity implements MSTheme {
     @Override
     public void onThemeSwitch() {
 
+    }
+
+
+
+    protected void startActivity(Class cls) {
+        Intent it = new Intent(this, cls);
+        startActivity(it);
+    }
+
+    protected void startActivity(Class cls, int requestCode) {
+        Intent it = new Intent(this, cls);
+        startActivityForResult(it, requestCode);
+    }
+
+    protected void startActivity(Class cls, Bundle bundle) {
+        Intent it = new Intent(this, cls);
+        it.putExtras(bundle);
+        startActivity(it);
+    }
+
+    protected void startActivity(Class cls, Bundle bundle, int requestCode) {
+        Intent it = new Intent(this, cls);
+        it.putExtras(bundle);
+        startActivityForResult(it, requestCode);
     }
 
 }
