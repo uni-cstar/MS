@@ -29,6 +29,17 @@ public class MSRxBaseFragment extends MSBaseFragment {
         mCompositeSubscription.add(s);
     }
 
+    /**
+     * 移除
+     * @param s
+     */
+    protected void removeSubscription(Subscription s) {
+        if (mCompositeSubscription == null || mCompositeSubscription.isUnsubscribed()) {
+            mCompositeSubscription = new CompositeSubscription();
+        }
+        mCompositeSubscription.remove(s);
+    }
+
     @Override
     public void onDetach() {
         super.onDetach();
