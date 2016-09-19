@@ -14,6 +14,21 @@ import java.io.IOException;
 public class BitmapUtil2 {
 
 	/**
+	 * 获取合适的inSampleSize
+	 *
+	 * @param outW      图片宽
+	 * @param outH      图片高
+	 * @param maxW      最大宽
+	 * @param maxHeight 最大高
+	 * @return
+	 */
+	public static int getInSampleSize(int outW, int outH, int maxW, int maxHeight) {
+		float var4 = (float) outW / (float) outH;
+		float var5 = (float) maxW / (float) maxHeight;
+		return var4 > var5 ? outW / maxW : outH / maxHeight;
+	}
+
+	/**
 	 * 读取图片的旋转角度
 	 * 
 	 * @param path
