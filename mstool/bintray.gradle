@@ -1,7 +1,7 @@
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-def proj_version = '1.0.4'
+def proj_version = '0.0.1'
 def proj_artifact_id = 'mstool'
 def proj_pom_name = 'Tools for Android'
 def proj_website_url = 'https://github.com/SupLuo/MS/tree/master/MSTool'
