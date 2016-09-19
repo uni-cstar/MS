@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- START  style for text-->
+    <style name="TextAppearance" parent="TextAppearance.AppCompat" />
+
+    <style name="TextAppearance.Caption" parent="TextAppearance">
+        <item name="android:textSize">@dimen/abc_text_size_caption_material</item>
+    </style>
+
+    <style name="TextAppearance.Caption.Gray" parent="TextAppearance.Caption">
+        <item name="android:textColor">@color/ms_gray_text</item>
+    </style>
+
+    <style name="TextAppearance.Caption.Black" parent="TextAppearance.Caption">
+        <item name="android:textColor">@color/ms_black_text</item>
+    </style>
+
+    <style name="TextAppearance.Caption.White" parent="TextAppearance.Caption">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TextAppearance.Content" parent="TextAppearance">
+        <item name="android:textSize">@dimen/abc_text_size_small_material</item>
+    </style>
+
+    <style name="TextAppearance.Content.Gray" parent="TextAppearance.Content">
+        <item name="android:textColor">@color/ms_gray_text</item>
+    </style>
+
+    <style name="TextAppearance.Content.Black" parent="TextAppearance.Content">
+        <item name="android:textColor">@color/ms_black_text</item>
+    </style>
+
+    <style name="TextAppearance.Content.White" parent="TextAppearance.Content">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TextAppearance.Subhead" parent="TextAppearance">
+        <item name="android:textSize">@dimen/abc_text_size_subhead_material</item>
+    </style>
+
+    <style name="TextAppearance.Subhead.Gray" parent="TextAppearance.Subhead">
+        <item name="android:textColor">@color/ms_gray_text</item>
+    </style>
+
+    <style name="TextAppearance.Subhead.Black" parent="TextAppearance.Subhead">
+        <item name="android:textColor">@color/ms_black_text</item>
+    </style>
+
+    <style name="TextAppearance.Subhead.White" parent="TextAppearance.Subhead">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TextAppearance.Title" parent="TextAppearance">
+        <item name="android:textSize">@dimen/abc_text_size_title_material</item>
+    </style>
+
+    <style name="TextAppearance.Title.White" parent="TextAppearance.Title">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="WrapContent"/>
+
+    <style name="WrapContent.Gray" parent="TextAppearance.Content.Gray">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="WrapContent.Black" parent="TextAppearance.Content.Black">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="WrapContent.White" parent="TextAppearance.Content.White">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="WrapSubhead.Gray" parent="TextAppearance.Subhead.Gray">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="WrapSubhead.Black" parent="TextAppearance.Subhead.Black">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="WrapSubhead.White" parent="TextAppearance.Subhead.White">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="WrapCaption.Gray" parent="TextAppearance.Caption.Gray">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="WrapCaption.Black" parent="TextAppearance.Caption.Black">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="WrapCaption.White" parent="TextAppearance.Caption.White">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- END style for text-->
+
+
+    <!-- START absList style-->
+    <style name="ListViewStyle">
+        <item name="android:cacheColorHint">@android:color/transparent</item>
+        <item name="android:scrollbars">none</item>
+        <item name="android:fadingEdge">none</item>
+    </style>
+
+    <style name="ListViewStyle.NoDivider" parent="ListViewStyle">
+        <item name="android:dividerHeight">0dp</item>
+        <item name="android:divider">@android:color/transparent</item>
+    </style>
+
+    <style name="ListViewStyle.NoDivider.NoSelector" parent="ListViewStyle.NoDivider">
+        <item name="android:listSelector">@android:color/transparent</item>
+    </style>
+
+    <style name="ListViewStyle.Divider" parent="ListViewStyle">
+        <item name="android:dividerHeight">1px</item>
+    </style>
+
+    <style name="ListViewStyle.Divider.DividerGray" parent="ListViewStyle.Divider">
+        <item name="android:divider">@color/ms_divider_gray</item>
+    </style>
+
+    <style name="ListViewStyle.Divider.DividerGray.SelectorWhite" parent="ListViewStyle.Divider.DividerGray">
+        <item name="android:listSelector">@drawable/ms_slt_white_to_dividergray</item>
+    </style>
+
+    <!-- END absList style-->
+
+</resources>

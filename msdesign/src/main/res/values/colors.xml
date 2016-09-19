@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 黑色字体 -->
+    <color name="ms_black_text">#333333</color>
+    <!-- 灰色字体 -->
+    <color name="ms_gray_text">#888888</color>
+
+    <!-- 分割线颜色 -->
+    <color name="ms_divider_gray">#DADADA</color>
+
+</resources>
