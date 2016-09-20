@@ -8,6 +8,8 @@ import android.widget.BaseAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
+import ms.view.R;
+
 /**
  * Created by Lucio on 2016/7/27.
  * 快速实现adapter
@@ -97,7 +99,7 @@ public abstract class QuickAdapter<T, VH extends QuickAdapter.ViewHolder> extend
             holder = onCreateViewHolder(parent, position);
             convertView = holder.mView;
         } else {
-            holder = (VH) convertView.getTag();
+            holder = (VH) convertView.getTag(R.id.ms_quick_vh);
         }
         bindViewHolder(holder, position);
         return convertView;
@@ -133,6 +135,7 @@ public abstract class QuickAdapter<T, VH extends QuickAdapter.ViewHolder> extend
 
         public ViewHolder(View itemView) {
             this.mView = itemView;
+            this.mView.setTag(R.id.ms_quick_vh,this);
         }
 
         public int getPosition() {
