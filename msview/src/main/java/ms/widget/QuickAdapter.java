@@ -34,7 +34,7 @@ public abstract class QuickAdapter<T, VH extends QuickAdapter.ViewHolder> extend
     }
 
     @Override
-    public Object getItem(int position) {
+    public T getItem(int position) {
         return mDatas.get(position);
     }
 

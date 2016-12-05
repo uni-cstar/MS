@@ -8,6 +8,16 @@ import android.text.TextUtils;
 public class StringUtil {
 
     /**
+     * 是否为空
+     *
+     * @param content
+     * @return
+     */
+    public static boolean isNullOrEmpty(String content) {
+        return content == null || "".equals(content);
+    }
+
+    /**
      * 左填充
      *
      * @param source 源字符串

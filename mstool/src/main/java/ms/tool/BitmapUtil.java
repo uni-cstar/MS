@@ -261,40 +261,7 @@ public class BitmapUtil {
         return output;
     }
 
-    /**
-     * 读取图片的旋转角度
-     *
-     * @param path
-     * @return 图片旋转的角度值（0,90,180,270）
-     * @throws IOException
-     */
-    public static int readPictureDegree(String path) throws IOException {
-        int degree;
-        ExifInterface exifInterface = new ExifInterface(path);
-        int orientation = exifInterface.getAttributeInt(
-                ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
-        switch (orientation) {
-            case ExifInterface.ORIENTATION_TRANSPOSE:
-            case ExifInterface.ORIENTATION_ROTATE_90:
-                degree = 90;
-                break;
 
-            case ExifInterface.ORIENTATION_ROTATE_180:
-            case ExifInterface.ORIENTATION_FLIP_VERTICAL:
-                degree = 180;
-                break;
-
-            case ExifInterface.ORIENTATION_TRANSVERSE:
-            case ExifInterface.ORIENTATION_ROTATE_270:
-                degree = 270;
-                break;
-
-            default:
-                degree = 0;
-                break;
-        }
-        return degree;
-    }
 
     /**
      * 保存bitmap为文件

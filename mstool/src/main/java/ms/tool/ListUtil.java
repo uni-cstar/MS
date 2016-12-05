@@ -9,13 +9,23 @@ import java.util.List;
 public class ListUtil {
 
     /**
+     * 列表是否为空
+     *
+     * @param lst
+     * @return
+     */
+    public static boolean isNullOrEmpty(List lst) {
+        return lst == null || lst.size() == 0;
+    }
+
+    /**
      * change list to super list
      *
      * @param datas
      * @param <T>
      * @return
      */
-    public static <T> List<T> changeToSuperList(Class<T> tClass,List<? extends T> datas) {
+    public static <T> List<T> changeToSuperList(Class<T> tClass, List<? extends T> datas) {
         if (datas == null)
             return null;
 

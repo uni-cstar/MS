@@ -65,6 +65,8 @@ public abstract class CacheViewFragment extends Fragment {
             if (parent != null) {
                 parent.removeView(mRootView);
             }
+        } else {
+            mRootView = null;
         }
 
     }

@@ -74,7 +74,7 @@ public class FileUtil {
      * @param fileName
      * @return
      */
-    private static String getSuffix(String fileName) {
+    public static String getSuffix(String fileName) {
         int dot_point = fileName.lastIndexOf(".");
         int sl_point = fileName.lastIndexOf("/");
         if (dot_point < sl_point) {
