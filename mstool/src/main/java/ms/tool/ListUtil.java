@@ -20,19 +20,19 @@ public class ListUtil {
 
     /**
      * change list to super list
-     *
-     * @param datas
-     * @param <T>
-     * @return
+     * @param tClass  父类class
+     * @param datas 数据源
+     * @param <T> 父类类型
+     * @return 父类包装之后的数据
      */
     public static <T> List<T> changeToSuperList(Class<T> tClass, List<? extends T> datas) {
         if (datas == null)
             return null;
 
         if (datas.size() == 0)
-            return new ArrayList<>();
+            return new ArrayList<T>();
 
-        List<T> result = new ArrayList<>();
+        List<T> result = new ArrayList<T>();
         for (T item : datas) {
             result.add(item);
         }

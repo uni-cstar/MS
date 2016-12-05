@@ -4,4 +4,7 @@
     <item name="as_cancel_btn_id" type="id" />
     <item name="as_id_bg_view" type="id" />
 
+    <!-- for quick adapter viewholder cache-->
+    <item name="ms_quick_vh" type="id" />
+
 </resources>
