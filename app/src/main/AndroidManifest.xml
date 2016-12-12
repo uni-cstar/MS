@@ -27,8 +27,8 @@
         </activity>
         <activity android:name=".test.mszxing.MSZXingMainActivity" />
         <activity android:name=".test.mszxing.MSZXingCustomerActivity" />
-        <activity android:name=".zxing.ZXingScannerActivity" />
-        <activity android:name=".zxing.ZXingCustomerScannerActivity" />
+        <activity android:name="ms.zxing.ZXingCustomerScannerActivity"/>
+        <activity android:name="ms.zxing.ZXingScannerActivity"/>
         <activity
             android:name=".test.mszxing.ScreenShotForQrCodeActivity"
             android:label="@string/title_activity_screen_shot_for_qr_code"
