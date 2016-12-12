@@ -64,10 +64,10 @@ public class SharedPreferencesUtil {
         return sp.getFloat(key, defVal);
     }
 
-    public static void setFloat(Context context, String fileName, String key, String val) {
+    public static void setFloat(Context context, String fileName, String key, float val) {
         SharedPreferences sp = context.getSharedPreferences(fileName, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
-        editor.putString(key, val);
+        editor.putFloat(key, val);
         editor.apply();
     }
 
