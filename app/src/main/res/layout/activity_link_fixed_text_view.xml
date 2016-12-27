@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ms.test.LinkFixedTextViewActivity">
+
+    <TextView
+        android:id="@+id/tv_0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="普通TextView:测试修正TextView中包含链接http://www.baidu.com,点击非链接区域不会响应view的单击事件,因此要实现点击链接的时候响应链接的点击,点击非链接的时候响应控件本身事件"
+        android:autoLink="web"/>
+    <ms.view.LinkFixedTextView
+        android:id="@+id/tv_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试修正TextView中包含链接http://www.baidu.com,点击非链接区域不会响应view的单击事件,因此要实现点击链接的时候响应链接的点击,点击非链接的时候响应控件本身事件"
+        android:autoLink="web"/>
+
+    <ms.view.LinkFixedTextView
+        android:id="@+id/tv_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试修正TextView中包含链接http://www.baidu.com,点击非链接区域不会响应view的单击事件,因此要实现点击链接的时候响应链接的点击,http://www.tmall.com,点击非链接的时候响应控http://www.jd.com,件本身事件"
+        android:autoLink="web"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="在listview中的情况"/>
+    <ListView
+        android:id="@+id/lv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+   />
+</LinearLayout>
