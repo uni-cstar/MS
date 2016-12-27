@@ -52,7 +52,7 @@ public class SharedPreferenceHelper {
         return SharedPreferencesUtil.getFloat(mContext, mFileName, key, defVal);
     }
 
-    public void setFloat(String key, String val) {
+    public void setFloat(String key, float val) {
         SharedPreferencesUtil.setFloat(mContext, mFileName, key, val);
     }
 }
