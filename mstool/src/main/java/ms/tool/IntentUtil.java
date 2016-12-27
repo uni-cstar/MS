@@ -202,4 +202,17 @@ public class IntentUtil {
                         Context.CLIPBOARD_SERVICE);
         cManager.setText(content);
     }
+
+    /**
+     * 打开wifi设置界面
+     * @param context
+     */
+    public static void openWifiSettingActivity(Context context){
+        if (android.os.Build.VERSION.SDK_INT > 10) {
+            // 3.0以上打开设置界面，也可以直接用ACTION_WIRELESS_SETTINGS打开到wifi界面
+            context.startActivity(new Intent(android.provider.Settings.ACTION_SETTINGS));
+        } else {
+            context.startActivity(new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS));
+        }
+    }
 }
