@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.ms.test.LinkFixedTextViewActivity;
 import com.ms.test.mszxing.MSZXingMainActivity;
 import com.ms.test.mszxing.ScreenShotForQrCodeActivity;
 
@@ -31,8 +32,9 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
 
     public String[] getDataArray() {
         return new String[]{
-                "二维码",
-                "截屏扫描二维码"
+                "二维码"
+                , "截屏扫描二维码"
+                , "LinkFixedTextView"
         };
     }
 
@@ -44,6 +46,9 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
             startActivity(it);
         } else if ("截屏扫描二维码".equals(menu)) {
             Intent it = new Intent(this, ScreenShotForQrCodeActivity.class);
+            startActivity(it);
+        } else if ("LinkFixedTextView".equals(menu)) {
+            Intent it = new Intent(this, LinkFixedTextViewActivity.class);
             startActivity(it);
         }
     }
