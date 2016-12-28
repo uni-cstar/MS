@@ -195,7 +195,7 @@ public class LinkFixedTextView extends TextView {
         return super.onTouchEvent(event);
     }
 
-    private void checkPerformLongClick() {
+    protected void checkPerformLongClick() {
         mHasPerformedLongPress = false;
         if (this.isEnableLongClickPerform()) {// 如果当前支持长按
             if (mPendingCheckForLongPress == null) {
