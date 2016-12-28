@@ -11,15 +11,11 @@ import android.content.Context;
 import android.text.Layout;
 import android.text.Selection;
 import android.text.Spannable;
-import android.text.method.Touch;
 import android.text.style.ClickableSpan;
 import android.text.style.URLSpan;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.view.View;
 import android.view.ViewConfiguration;
-import android.view.ViewParent;
-import android.widget.AdapterView;
 import android.widget.TextView;
 
 /**
@@ -41,12 +37,24 @@ public class LinkFixedTextView extends TextView {
     private OnLinkFixedTextViewListener listener;
 
     //解决问题-重写touchevent之后,长按超链接并不会响应控件的长按时间,因此在up和down的时候,校验是否主动触发longclick事件
-    View.OnLongClickListener mLongClickListenerCache = null;
+    OnLongClickListener mLongClickListenerCache = null;
     CheckForLongPress mPendingCheckForLongPress;//长按延迟执行
     private boolean mHasPerformedLongPress = false;//是否已触发长按操作
 
     //
-    View.OnClickListener mClickListenerCache = null;
+    OnClickListener mClickListenerCache = null;
+
+    /**
+     * 是否按住了控件
+     * 解决:
+     * 在listview中 长按文本的超链接,{@link #isPressed()}返回false,导致CheckForLongPress没有触发长按处理
+     */
+    private boolean mIsTouching = false;
+
+    /**
+     * 是否是adapterview的item
+     */
+    private boolean mIsAttachToAdapterView = false;
 
     public LinkFixedTextView(Context context) {
         super(context);
@@ -77,6 +85,7 @@ public class LinkFixedTextView extends TextView {
      * 否则可以在控件的click等相应事件中实现类似adapterview的事件效果
      */
     public void setAttachToAdapterView() {
+        mIsAttachToAdapterView = true;
         this.setFocusable(false);
         this.setClickable(false);
         this.setLongClickable(false);
@@ -88,7 +97,7 @@ public class LinkFixedTextView extends TextView {
      * @return
      */
     private boolean isEnableClickPerform() {
-        return this.isClickable() && mClickListenerCache != null;
+        return mIsAttachToAdapterView ? mClickListenerCache != null : this.isClickable() && mClickListenerCache != null;
     }
 
     /**
@@ -97,84 +106,75 @@ public class LinkFixedTextView extends TextView {
      * @return
      */
     private boolean isEnableLongClickPerform() {
-        return this.isLongClickable() && mLongClickListenerCache != null;
+        return mIsAttachToAdapterView ? mLongClickListenerCache != null : this.isLongClickable() && mLongClickListenerCache != null;
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         try {
-            //如果没有设置超链接监听,则不处理
-            if (this.listener == null) {
-                return super.onTouchEvent(event);
-            }
-
+//            boolean performAction = isPerformAction();
+//            if (!performAction) {
+//                return super.onTouchEvent(event);
+//            }
             int action = event.getAction();
-            //如果控件被按下或者手指离开控件
-            if (action == MotionEvent.ACTION_DOWN || action == MotionEvent.ACTION_UP) {
-                //获取当前文本
-                CharSequence text = this.getText();
-                Spannable spanText = Spannable.Factory.getInstance().newSpannable(text);
 
-                //获取当前手指坐标
-                int x = (int) event.getX();
-                int y = (int) event.getY();
+            if (action != MotionEvent.ACTION_DOWN && action != MotionEvent.ACTION_UP)
+                return super.onTouchEvent(event);
 
-                //计算偏移量
-                x -= this.getTotalPaddingLeft();
-                y -= this.getTotalPaddingTop();
+            //获取当前文本
+            CharSequence text = this.getText();
+            Spannable spanText = Spannable.Factory.getInstance().newSpannable(text);
 
-                x += this.getScrollX();
-                y += this.getScrollY();
+            //获取当前手指坐标
+            int x = (int) event.getX();
+            int y = (int) event.getY();
 
-                Layout layout = this.getLayout();
-                int line = layout.getLineForVertical(y);
-                int off = layout.getOffsetForHorizontal(line, x);
+            //计算偏移量
+            x -= this.getTotalPaddingLeft();
+            y -= this.getTotalPaddingTop();
 
-                //获取包含的link
-                ClickableSpan[] links = spanText.getSpans(off, off, ClickableSpan.class);
+            x += this.getScrollX();
+            y += this.getScrollY();
 
+            Layout layout = this.getLayout();
+            int line = layout.getLineForVertical(y);
+            int off = layout.getOffsetForHorizontal(line, x);
 
-                //如果点击区域不包含链接
-                if (links == null || links.length == 0) {
-                    //如果控件本身要响应点击或者长按操作,则返回super.onTouchEvent(event)
-                    if (isEnableClickPerform() || isEnableLongClickPerform()) {
-                        return super.onTouchEvent(event);
-                    } else {
-                        //此方法可以从控件本身思考出发去触发被adapterview包涵的情况,但是这样没有必要,还的考虑本身的click与adapterview的itemviewclick的兼容情况
-//                        try {
-//                            //解决ListView中包涵链接的情况
-//                            View child = this;
-//                            ViewParent parent = this.getParent();
-//                            while (parent != null) {
-//                                if (parent instanceof AdapterView) {//
-//                                    AdapterView adapterView = (AdapterView) parent;
-//                                    int position = adapterView.getPositionForView(child);
-//                                    long id = adapterView.getItemIdAtPosition(position);
-//                                    AdapterView.OnItemClickListener itemClickListener = adapterView.getOnItemClickListener();
-//                                    if (itemClickListener != null) {
-//                                        itemClickListener.onItemClick(adapterView, child, position, id);
-//                                    }
-//                                    break;
-//                                } else {
-//                                    child = (View) parent;
-//                                    parent = child.getParent();
-//                                }
-//                            }
-//                        }catch (Exception e){
-//                            e.printStackTrace();
-//                        }
-                        return false;
+            //获取包含的link
+            ClickableSpan[] links = spanText.getSpans(off, off, ClickableSpan.class);
+
+            if (action == MotionEvent.ACTION_DOWN) {
+                //如果控件要响应点击或长按或按下的位置包含超链接 则返回true,表示要处理事件
+                boolean downLink = links != null && links.length > 0;
+                if (isEnableClickPerform() || isEnableLongClickPerform() || downLink) {
+                    checkPerformLongClick();
+                    mIsTouching = true;
+                    setPressed(true);
+                    if (downLink) {
+                        int start = spanText.getSpanStart(links[0]);
+                        int end = spanText.getSpanEnd(links[0]);
+                        Selection.setSelection(spanText, start, end);
                     }
+                    return true;
+                } else {
+                    return false;
                 }
+            } else if (action == MotionEvent.ACTION_UP) {
+                mIsTouching = false;
+                setPressed(false);
+                if (mHasPerformedLongPress) {//如果已经触发了长按操作,则不再处理
+                    //预防触发系统的长按操作
+                    cancelLongPress();
+                } else {
+                    //移除长按
+                    removeLongPressCallback();
 
-
-                //如果包含了链接 : 链接的处理并不会影响控件本身的处理,两者事件处理相对独立,因此只专注 链接的处理
-                checkLongClickPerformForLinkState(action);
-                // 如果手指弹起
-                if (action == MotionEvent.ACTION_UP) {
-                    //如果触发了长按操作,则取消系统的长按触发:手动触发的时间比系统时间更短,所以先于系统触发
-                    if (mHasPerformedLongPress) {
-                        cancelLongPress();
+                    //如果点击区域不包含链接
+                    if (links == null || links.length == 0) {
+                        //没有触发长按操作,点击区域也不是超链接,则处理点击操作
+                        if (isEnableClickPerform()) {
+                            mClickListenerCache.onClick(this);
+                        }
                     } else {
                         //触发链接点击回调
                         if (links[0] instanceof URLSpan) {
@@ -183,13 +183,10 @@ public class LinkFixedTextView extends TextView {
                         } else {
                             (links[0]).onClick(this);
                         }
+                        Selection.removeSelection(spanText);
                     }
-                    Selection.removeSelection(spanText);
-                    return true;
-                } else if (action == MotionEvent.ACTION_DOWN) {
-                    Selection.setSelection(spanText, spanText.getSpanStart(links[0]), spanText.getSpanEnd(links[0]));
-                    return true;
                 }
+                return true;
             }
         } catch (Exception ex) {
             return super.onTouchEvent(event);
@@ -198,32 +195,9 @@ public class LinkFixedTextView extends TextView {
         return super.onTouchEvent(event);
     }
 
-    /**
-     * 检查长按触发
-     *
-     * @param motionEvent
-     */
-    private void checkLongClickPerformForLinkState(int motionEvent) {
-        try {
-            if (!this.isLongClickable())//不支持长按,则直接返回
-                return;
-
-            if (motionEvent == MotionEvent.ACTION_DOWN) {
-                checkForLongClick();
-            } else if (motionEvent == MotionEvent.ACTION_UP) {
-                if (!mHasPerformedLongPress) {
-                    removeLongPressCallback();
-                }
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    //设置长按回调
-    private void checkForLongClick() {
-        if (this.isLongClickable()) {// 如果当前支持长按
-            mHasPerformedLongPress = false;
+    private void checkPerformLongClick() {
+        mHasPerformedLongPress = false;
+        if (this.isEnableLongClickPerform()) {// 如果当前支持长按
             if (mPendingCheckForLongPress == null) {
                 mPendingCheckForLongPress = new CheckForLongPress();
             }
@@ -245,7 +219,7 @@ public class LinkFixedTextView extends TextView {
     private final class CheckForLongPress implements Runnable {
         @Override
         public void run() {
-            if (isPressed()) {
+            if (mIsTouching) {
                 if (performLongClick()) {
                     mHasPerformedLongPress = true;
                 }
