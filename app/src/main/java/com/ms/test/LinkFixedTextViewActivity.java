@@ -1,11 +1,8 @@
 package com.ms.test;
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.method.LinkMovementMethod;
+import android.support.v7.app.AppCompatActivity;
 import android.text.style.URLSpan;
 import android.text.util.Linkify;
 import android.util.Log;
@@ -24,9 +21,9 @@ import ms.view.LinkFixedTextView;
 public class LinkFixedTextViewActivity extends AppCompatActivity {
 
     Activity mActivity = this;
-    String TAG = "LinkFixedTextViewActivity";
+    String TAG = "LinkFixedTextView2Activity";
 
-    TextView tv0;
+    TextView tv00,tv01;
     LinkFixedTextView tv1, tv2;
 
     ListView mListView;
@@ -35,17 +32,20 @@ public class LinkFixedTextViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_link_fixed_text_view);
-        tv0 = (TextView) this.findViewById(R.id.tv_0);
-        tv1 = (LinkFixedTextView) this.findViewById(R.id.tv_1);
-        tv2 = (LinkFixedTextView) this.findViewById(R.id.tv_2);
+        tv00 = (TextView) this.findViewById(R.id.tv_0_0);
+        tv01 = (TextView) this.findViewById(R.id.tv_0_1);
+        tv1 = (LinkFixedTextView) this.findViewById(R.id.tv_1_1);
+        tv2 = (LinkFixedTextView) this.findViewById(R.id.tv_1_2);
 
         tv1.setOnLinkFixedTextViewListener(linkClickListener);
         tv2.setOnLinkFixedTextViewListener(linkClickListener);
 
-        tv0.setOnClickListener(clickListener);
+        tv00.setOnClickListener(clickListener);
+        tv01.setOnClickListener(clickListener);
         tv1.setOnClickListener(clickListener);
         tv2.setOnClickListener(clickListener);
-        tv0.setOnLongClickListener(longClickListener);
+        tv00.setOnLongClickListener(longClickListener);
+        tv01.setOnLongClickListener(longClickListener);
         tv1.setOnLongClickListener(longClickListener);
         tv2.setOnLongClickListener(longClickListener);
 
@@ -84,6 +84,7 @@ public class LinkFixedTextViewActivity extends AppCompatActivity {
 
     int count;
     private LinkFixedTextView.OnLinkFixedTextViewListener linkClickListener = new LinkFixedTextView.OnLinkFixedTextViewListener() {
+
         @Override
         public void onLinkFixedURLSpanClick(LinkFixedTextView sender, URLSpan clickedSpan) {
             try {
@@ -147,27 +148,37 @@ public class LinkFixedTextViewActivity extends AppCompatActivity {
         public View getView(int position, View convertView, ViewGroup parent) {
             TextView textView = null;
             if (convertView == null) {
-                String linkText = "测试修正TextView中包含链接http://www.baidu.com,点击非链接区域不会响应view的单击事件,因此要实现点击链接的时候响应链接的点击,http://www.tmall.com,点击非链接的时候响应控http://www.jd.com,件本身事件";
-                String normalText = "测试修正TextView中包含链接点击非链接区域不会响应view的单击事件,因此要实现点击链接的时候响应链接的点击点击非链接的时候响应控件本身事件";
+                String linkText = "这是一串包含链接的文本:测试TextView中包含链接http://www.baidu.com,点击,http://www.tmall.com,点击非链接的控http://www.jd.com,件本身事件";
+                String normalText = "这是一串普通文本:测试修应链接的点击点击非链接的时候响应控件本身事件";
+                String linkText2 = "http://www.baidu.com";
 
                 if (position == 0) {
                     textView = new LinkFixedTextView(mActivity);
                     ((LinkFixedTextView) textView).setOnLinkFixedTextViewListener(linkClickListener);
+//                    ((LinkFixedTextView2) textView).setAttachToAdapterView();
                     textView.setOnClickListener(clickListener);
                     textView.setOnLongClickListener(longClickListener);
                     textView.setAutoLinkMask(Linkify.WEB_URLS);
-                    textView.setText(linkText);
+                    textView.setText("设置了控件自身的click longclick" + linkText);
+                    ((LinkFixedTextView) textView).setAttachToAdapterView();
                 } else if (position == 1) {
-                    textView = new TextView(mActivity);
-                    textView.setText(normalText);
-                } else {
-                    textView = new TextView(mActivity);
+                    textView = new LinkFixedTextView(mActivity);
+                    ((LinkFixedTextView) textView).setOnLinkFixedTextViewListener(linkClickListener);
+//                    ((LinkFixedTextView2) textView).setAttachToAdapterView();
                     textView.setAutoLinkMask(Linkify.WEB_URLS);
                     textView.setText(linkText);
+                    ((LinkFixedTextView) textView).setAttachToAdapterView();
+                } else {
+                    textView = new LinkFixedTextView(mActivity);
+                    ((LinkFixedTextView) textView).setOnLinkFixedTextViewListener(linkClickListener);
+
+                    textView.setAutoLinkMask(Linkify.WEB_URLS);
+                    textView.setOnClickListener(clickListener);
+                    textView.setOnLongClickListener(longClickListener);
+                    textView.setText("http://www.baidu.com");
+                    ((LinkFixedTextView) textView).setAttachToAdapterView();
                 }
-                textView.setFocusable(false);
-                textView.setClickable(false);
-                textView.setLongClickable(false);
+
             } else {
                 textView = (TextView) convertView;
             }
