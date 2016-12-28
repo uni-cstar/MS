@@ -118,8 +118,16 @@ public class LinkFixedTextView extends TextView {
 //            }
             int action = event.getAction();
 
-            if (action != MotionEvent.ACTION_DOWN && action != MotionEvent.ACTION_UP)
-                return super.onTouchEvent(event);
+            if (action != MotionEvent.ACTION_DOWN && action != MotionEvent.ACTION_UP){
+                if(action == MotionEvent.ACTION_CANCEL){
+                    setPressed(false);
+                    //移除长按
+                    removeLongPressCallback();
+                    return true;
+                }else{
+                    return super.onTouchEvent(event);
+                }
+            }
 
             //获取当前文本
             CharSequence text = this.getText();
