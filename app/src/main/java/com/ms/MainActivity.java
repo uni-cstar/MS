@@ -11,6 +11,7 @@ import android.widget.ListView;
 import com.ms.test.LinkFixedTextViewActivity;
 import com.ms.test.mszxing.MSZXingMainActivity;
 import com.ms.test.mszxing.ScreenShotForQrCodeActivity;
+import com.ms.test.uri.SchemaActivity;
 
 public class MainActivity extends Activity implements AdapterView.OnItemClickListener {
 
@@ -35,6 +36,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
                 "二维码"
                 , "截屏扫描二维码"
                 , "LinkFixedTextView"
+                , "Schema"
         };
     }
 
@@ -49,6 +51,9 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
             startActivity(it);
         } else if ("LinkFixedTextView".equals(menu)) {
             Intent it = new Intent(this, LinkFixedTextViewActivity.class);
+            startActivity(it);
+        }else if("Schema".equalsIgnoreCase(menu)){
+            Intent it = new Intent(this, SchemaActivity.class);
             startActivity(it);
         }
     }

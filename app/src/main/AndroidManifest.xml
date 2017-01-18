@@ -32,8 +32,69 @@
         <activity
             android:name=".test.mszxing.ScreenShotForQrCodeActivity"
             android:label="@string/title_activity_screen_shot_for_qr_code"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".test.LinkFixedTextViewActivity"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".test.LinkFixedTextViewActivity" />
+        <activity android:name=".test.uri.Uri1Activity">
+            <intent-filter>
+                <action android:name="ms.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="test1"
+                    android:scheme="ms" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".test.uri.Uri2Activity">
+            <intent-filter>
+                <action android:name="ms.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="test2"
+                    android:path="/path1"
+                    android:scheme="ms" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".test.uri.Uri3Activity">
+            <intent-filter>
+                <action android:name="ms.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="test2"
+                    android:path="/path2"
+                    android:scheme="ms"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".test.uri.SchemaActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="ms" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".test.uri.Schema2Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="test1"
+                    android:path="/path1"
+                    android:scheme="ms" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
