@@ -80,26 +80,26 @@ artifacts {
     archives sourcesJar
 }
 
-// 生成jar包
-task releaseJar(type: Copy) {
-
-    from( 'build/intermediates/bundles/release')
-    into( '../jar')
-    include('classes.jar')
-    rename('classes.jar', 'okgo-' + version + '.jar')
-}
-
-//打包Jar的任务
-task makeJar(type: proguard.gradle.ProGuardTask, dependsOn: "build") {
-
-    // 未混淆的jar路径
-    injars 'build/intermediates/bundles/release/classes.jar'
-    // 混淆后的jar输出路径
-    outjars 'build/outputs/msproguard-0.0.1.jar'
-    // 混淆协议
-    configuration 'proguard-rules.pro'
-
-}
+//// 生成jar包
+//task releaseJar(type: Copy) {
+//
+//    from( 'build/intermediates/bundles/release')
+//    into( '../jar')
+//    include('classes.jar')
+//    rename('classes.jar', 'okgo-' + version + '.jar')
+//}
+//
+////打包Jar的任务
+//task makeJar(type: proguard.gradle.ProGuardTask, dependsOn: "build") {
+//
+//    // 未混淆的jar路径
+//    injars 'build/intermediates/bundles/release/classes.jar'
+//    // 混淆后的jar输出路径
+//    outjars 'build/outputs/msproguard-0.0.1.jar'
+//    // 混淆协议
+//    configuration 'proguard-rules.pro'
+//
+//}
 
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
