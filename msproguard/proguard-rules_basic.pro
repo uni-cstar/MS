@@ -36,6 +36,7 @@
     native <methods>;
 }
 # 混淆注意事项第四条，保持WebView中JavaScript调用的方法
+# 下面新增的-keepattributes *Annotation*保留注解，还应该是包含了这句功能
 -keepclassmembers class * {
     @android.webkit.JavascriptInterface <methods>;
 }
