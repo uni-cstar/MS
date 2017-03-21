@@ -1,11 +1,16 @@
 #########################START############################
 #来源：proguard-android-optimize.txt
+#-优化-
 #（Basic）优化算法
 -optimizations !code/simplification/arithmetic,!code/simplification/cast,!field/*,!class/merging/*
 #（Basic）迭代优化，n表示proguard对代码进行迭代优化的次数，Android一般为5
 -optimizationpasses 5
 #（Basic）提高优化步骤
 -allowaccessmodification
+#如果不想开启优化，则注释上面三句，开启下面一句
+#-dontoptimize
+#-优化-
+
 #（Basic）#不做预校验，preverify是proguard的四个步骤之一，Android不需要preverify，去掉这一步能够加快混淆速度
 -dontpreverify
 #（Basic 包名不混合大小写
@@ -21,7 +26,7 @@
 -keep public class com.android.vending.licensing.ILicensingService
 
 # 混淆注意事项见：http://www.jianshu.com/p/1b76e4c10495
-#（Basic）混淆注意事项第一条，保留四大组件及Android的其它组件，保留参数只有一个View的方法是为了预防xml中定义OnClick属性
+#（Basic）混淆注意事项第一条，保留清单文件相关的配置比如四大组件；保留参数只有一个View的方法是为了预防xml中定义OnClick属性
 -keepclassmembers class * extends android.app.Activity {
    public void *(android.view.View);
 }
@@ -35,11 +40,22 @@
 -keepclasseswithmembernames class * {
     native <methods>;
 }
+
+#-webview-
 # 混淆注意事项第四条，保持WebView中JavaScript调用的方法
 # 下面新增的-keepattributes *Annotation*保留注解，还应该是包含了这句功能
 -keepclassmembers class * {
     @android.webkit.JavascriptInterface <methods>;
 }
+# 建议：使用了WebView和JS的需要添加下面语句
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+   public *;
+}
+#-webview-
+
 # 混淆注意事项第五条 自定义View （Basic）
 -keepclassmembers public class * extends android.view.View {
    void set*(***);
