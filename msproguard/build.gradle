@@ -39,3 +39,5 @@ task makeJar(type: proguard.gradle.ProGuardTask, dependsOn: "build") {
     // 混淆协议
     configuration 'proguard-rules.pro'
 }
+
+//apply from:'./bintray.gradle'
