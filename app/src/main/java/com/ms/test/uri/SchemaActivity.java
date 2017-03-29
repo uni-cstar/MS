@@ -45,6 +45,16 @@ public class SchemaActivity extends AppCompatActivity {
                 startActivity(it);
             }
         });
+
+        String uriString = "ucux://host1/path1?p1=123&p2=\"23\"".toUpperCase();
+        Uri mUri = Uri.parse(uriString);
+        String host = mUri.getHost();
+        String path = mUri.getPath();
+        String p1 = mUri.getQueryParameter("P1");
+        String p11 = mUri.getQueryParameter("p1");
+        String p2 = mUri.getQueryParameter("p2");
+        String p3 = mUri.getQueryParameter("p3");
+        int i = 0;
     }
 
     public static boolean isUxIntentExisting(Context context, Intent it) {

@@ -24,10 +24,17 @@
 # versions are distributed with the plugin and unpacked at build time. Files in this directory are
 # no longer maintained.
 
-#表示混淆时不使用大小写混合类名
+#代码混淆压缩比，在0~7之间，默认为5，一般不做修改
+-optimizationpasses 5
+#混合时不使用大小写混合，混合后的类名为小写
 -dontusemixedcaseclassnames
-#表示不跳过library中的非public的类
+#指定不去忽略非公共库的类
 -dontskipnonpubliclibraryclasses
+
+#这句话能够使我们的项目混淆后产生映射文件
+#包含有类名->混淆后类名的映射关系
+-verbose
+
 #打印混淆的详细信息
 -verbose
 
@@ -35,23 +42,25 @@
 # through the ProGuard optimize and preverify steps (and performs some
 # of these optimizations on its own).
 -dontoptimize
-##表示不进行校验,这个校验作用 在java平台上的
--dontpreverify
-# Note that if you want to enable optimization, you cannot just
-# include optimization flags in your own project configuration file;
-# instead you will need to point to the
-# "proguard-android-optimize.txt" file instead of this one from your
-# project.properties file.
 
+#不做预校验，preverify是proguard的四个步骤之一，Android不需要preverify，去掉这一步能够加快混淆速度
+-dontpreverify
+
+#保留Annotation不混淆
 -keepattributes *Annotation*
--keep public class com.google.vending.licensing.ILicensingService
--keep public class com.android.vending.licensing.ILicensingService
+#保护泛型
+-keepattributes Signature
+#抛出异常时保留代码行号
+-keepattributes SourceFile,LineNumberTable
+
 
 # For native methods, see http://proguard.sourceforge.net/manual/examples.html#native
 -keepclasseswithmembernames class * {
     native <methods>;
 }
 
+#保留我们使用的四大组件，自定义的Application等等这些类不被混淆
+#因为这些子类都有可能被外部调用
 # keep setters in Views so that animations can still work.
 # see http://proguard.sourceforge.net/manual/examples.html#beans
 -keepclassmembers public class * extends android.view.View {
@@ -63,6 +72,18 @@
 -keepclassmembers class * extends android.app.Activity {
    public void *(android.view.View);
 }
+-keep public class * extends android.app.Appliction
+-keep public class * extends android.app.Service
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+-keep public class * extends android.app.backup.BackupAgentHelper
+-keep public class * extends android.preference.Preference
+-keep public class * extends android.view.View
+-keep public class com.android.vending.licensing.ILicensingService
+
+-keep public class com.google.vending.licensing.ILicensingService
+-keep public class com.android.vending.licensing.ILicensingService
+
 
 # For enumeration classes, see http://proguard.sourceforge.net/manual/examples.html#enumerations
 -keepclassmembers enum * {
@@ -70,10 +91,12 @@
     public static ** valueOf(java.lang.String);
 }
 
+#保留Parcelable序列化类不被混淆
 -keepclassmembers class * implements android.os.Parcelable {
   public static final android.os.Parcelable$Creator CREATOR;
 }
 
+#保留R下面的资源
 -keepclassmembers class **.R$* {
     public static <fields>;
 }
@@ -114,8 +137,7 @@
 -ignorewarnings
 #保证是独立的jar,没有任何项目引用,如果不写就会认为我们所有的代码是无用的,从而把所有的代码压缩掉,导出一个空的jar
 -dontshrink
-#保护泛型
--keepattributes Signature
+
 
 #不混淆这个包名下的文件
 -keep class ms.msproguard.open.**{*;}
