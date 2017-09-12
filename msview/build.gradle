@@ -36,4 +36,4 @@ dependencies {
 
 
 //发布bintray
-//apply from:'./bintray.gradle'
+apply from:'./bintray.gradle'

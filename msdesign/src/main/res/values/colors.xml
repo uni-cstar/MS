@@ -9,4 +9,6 @@
     <!-- 分割线颜色 -->
     <color name="ms_divider_gray">#DADADA</color>
 
+    <!--半透明色 来源v17-->
+    <color name="ms_translucent">0x7f0e0037</color>
 </resources>

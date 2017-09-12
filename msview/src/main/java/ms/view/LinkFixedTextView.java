@@ -1,10 +1,4 @@
-/**
- * @包名 ucux.app.widgets
- * @文件名 LinkFixedTextView.java
- * @作者 luochao
- * @创建日期 2015-6-8
- * @版本 V 1.0
- */
+
 package ms.view;
 
 import android.content.Context;
